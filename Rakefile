@@ -1,6 +1,15 @@
+require "rake/clean"
 require "cucumber/rake/task"
 require "pathname"
 
-ENV['APP_URL'] = (Pathname.new(__FILE__).parent + "public" + "index.html").to_s
+PUBLIC_DIR = Pathname.new(__FILE__).parent + "public"
+APP_DIR = PUBLIC_DIR + "app"
+ENV['APP_URL'] = (PUBLIC_DIR + "index.html").to_s
+CLEAN.include APP_DIR + "*.js"
 
-Cucumber::Rake::Task.new(:features)
+desc "Compile CoffeeScript files"
+task :compile_coffee do
+  sh "coffee --compile #{APP_DIR}"
+end
+
+Cucumber::Rake::Task.new(:features => :compile_coffee)
