@@ -1,1 +1,3 @@
-document.title = "PSB Portal Mobile"
+Ext.application
+  launch: ->
+    document.title = "PSB Portal Mobile"
