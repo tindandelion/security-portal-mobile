@@ -1,0 +1,7 @@
+When /^a user "([^"]*)" logs in with password "([^"]*)"$/ do |username, password|
+  login_as :username => username, :password => password
+end
+
+Then /^a summary page for user "([^"]*)" is displayed$/ do |username|
+  current_user.should == username
+end
