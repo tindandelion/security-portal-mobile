@@ -8,8 +8,8 @@ ENV['APP_URL'] = (PUBLIC_DIR + "index.html").to_s
 CLEAN.include APP_DIR + "*.js"
 
 desc "Compile CoffeeScript files"
-task :compile_coffee do
+task :compile do
   sh "coffee --compile #{APP_DIR}"
 end
 
-Cucumber::Rake::Task.new(:features => :compile_coffee)
+Cucumber::Rake::Task.new(:features => :compile)

@@ -13,10 +13,16 @@ module PsbMobileSupport
     @browser ||= Watir::Safari.new
   end
   
+  def on_home_screen?
+    home_screen = browser.div(:id, 'home-screen')
+    not home_screen.class_name.include?('x-item-hidden')
+  end
+  
   def login_as(credentials)
-    browser.text_field(:id, "login-username").set credentials[:username]
-    browser.text_field(:id, "login-password").set credentials[:password]
-    browser.button(:id, "login-action").click
+    browser.text_field(:name, "login-username").set credentials[:username]
+    browser.password(:name, "login-password").set credentials[:password]
+    binding.pry
+    browser.div(:id, "login-action").click
   end
 end
 
