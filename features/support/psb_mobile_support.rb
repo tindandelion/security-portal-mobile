@@ -14,16 +14,27 @@ module PsbMobileSupport
   end
   
   def on_home_screen?
-    home_screen = browser.div(:id => 'home-screen')
+    home_screen = browser.div(:id =>'home-screen')
     not home_screen.class_name.include?('x-item-hidden')
   end
   
+  def current_user
+    home_screen = browser.div(:id =>'home-screen')
+    home_screen.div(:id => 'current-user').text
+  end
+  
   def login_as(credentials)
-    browser.text_field(:name => "login-username").set credentials[:username]
-    browser.text_field(:name => "login-password").set credentials[:password]
-    browser.div(:id => "login-action").click
+    login_screen = browser.form(:id => 'login-screen')
+    login_screen.text_field(:name => "username").set credentials[:username]
+    login_screen.text_field(:name => "password").set credentials[:password]
+    login_screen.div(:id => "action").click
   end
 end
 
 World(PsbMobileSupport)
+
+After do |scenario|
+  browser.close unless scenario.failed? 
+end
+
 

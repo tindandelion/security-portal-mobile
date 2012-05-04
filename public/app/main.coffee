@@ -1,30 +1,43 @@
 Ext.application
   launch: -> 
     document.title = "PSB Portal Mobile"
-    Ext.create "Ext.form.Panel",
+    home_screen = Ext.create "Ext.Panel",
+      id: 'home-screen'
+      fullscreen: true
+      items: [
+        {
+          xtype: 'label'
+          id: 'current-user'
+          html: 'Current User'
+        }
+        ]
+    
+    login_screen = Ext.create "Ext.form.Panel",
       id: 'login-screen'
       fullscreen: true
       items: [
         {
           xtype: 'textfield'
-          name: 'login-username'
+          name: 'username'
           label: 'User name'
         },
         {
           xtype: 'passwordfield'
-          name: 'login-password'
+          name: 'password'
           label: 'Password'
         },
         {
           xtype: 'button'
-          id: 'login-action'
+          id: 'action'
           text: 'Log in'
           ui: 'confirm'
           handler: -> 
-            Ext.Viewport.setActiveItem(1)
+            credentials = login_screen.getValues()
+            current_user_label = home_screen.child('#current-user')
+            current_user_label.setHtml(credentials.username)
+            Ext.Viewport.setActiveItem(home_screen)
         }]
-    Ext.create "Ext.Panel",
-      id: 'home-screen'
-      fullscreen: true
+    Ext.Viewport.setActiveItem(login_screen)
+    
       
     
