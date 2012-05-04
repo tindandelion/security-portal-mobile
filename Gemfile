@@ -1,7 +1,6 @@
 source "https://rubygems.org"
 
-gem "rb-appscript"
-gem "safariwatir"
+gem "watir-webdriver"
 gem "cucumber"
 
 group :development do

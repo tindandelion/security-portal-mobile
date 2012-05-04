@@ -1,4 +1,5 @@
 When /^a user "([^"]*)" logs in with password "([^"]*)"$/ do |username, password|
+  start_application
   login_as :username => username, :password => password
 end
 
