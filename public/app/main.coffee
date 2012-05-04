@@ -1,6 +1,5 @@
 Ext.application
   launch: -> 
-    document.title = "PSB Portal Mobile"
     home_screen = Ext.create "Ext.Panel",
       id: 'home-screen'
       fullscreen: true
@@ -9,8 +8,7 @@ Ext.application
           xtype: 'label'
           id: 'current-user'
           html: 'Current User'
-        }
-        ]
+        }]
     
     login_screen = Ext.create "Ext.form.Panel",
       id: 'login-screen'
