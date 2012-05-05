@@ -1,6 +1,9 @@
+Ext.define 'Portal.ui.HomeScreen',
+  extend: 'Ext.Panel'
+
 Ext.application
   launch: -> 
-    home_screen = Ext.create "Ext.Panel",
+    home_screen = Ext.create 'Portal.ui.HomeScreen',
       id: 'home-screen'
       fullscreen: true
       items: [
