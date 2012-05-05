@@ -1,21 +1,28 @@
 Ext.define 'Portal.ui.HomeScreen',
   extend: 'Ext.Panel'
+  config:
+    fullscreen: true
+    items: [
+      {
+        xtype: 'label'
+        id: 'current-user'
+        html: 'Current User'
+      }]
+      
+  setUserName: (value) ->
+    @child('#current-user').setHtml(value)
+    
+Ext.define 'Portal.ui.LoginScreen', 
+  extend: 'Ext.form.Panel'
+  config:
+    fullscreen: true
 
 Ext.application
   launch: -> 
-    home_screen = Ext.create 'Portal.ui.HomeScreen',
-      id: 'home-screen'
-      fullscreen: true
-      items: [
-        {
-          xtype: 'label'
-          id: 'current-user'
-          html: 'Current User'
-        }]
+    home_screen = Ext.create 'Portal.ui.HomeScreen', id: 'home-screen'
     
-    login_screen = Ext.create "Ext.form.Panel",
+    login_screen = Ext.create 'Portal.ui.LoginScreen',
       id: 'login-screen'
-      fullscreen: true
       items: [
         {
           xtype: 'textfield'
@@ -34,8 +41,7 @@ Ext.application
           ui: 'confirm'
           handler: -> 
             credentials = login_screen.getValues()
-            current_user_label = home_screen.child('#current-user')
-            current_user_label.setHtml(credentials.username)
+            home_screen.setUserName(credentials.username)
             Ext.Viewport.setActiveItem(home_screen)
         }]
     Ext.Viewport.setActiveItem(login_screen)
