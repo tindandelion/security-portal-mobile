@@ -11,16 +11,21 @@ rescue LoadError
   end
 end
 
-PUBLIC_DIR = Pathname.new(__FILE__).parent + "public"
-APP_DIR = PUBLIC_DIR
-ENV['APP_URL'] = "file://" + (PUBLIC_DIR + "index.html").to_s
-CLEAN.include APP_DIR + "*.js"
+PROJECT_DIR = Pathname.new(__FILE__).parent
+APP_DIR = PROJECT_DIR + "public"
+SPEC_DIR = PROJECT_DIR + "spec"
+
+ENV['APP_URL'] = "file://" + (APP_DIR + "index.html").to_s
 ENV['JASMINE_BROWSER'] = 'chrome'
 
 desc "Compile CoffeeScript files"
 task :compile do
   sh "coffee --compile #{APP_DIR}"
+  sh "coffee --compile #{SPEC_DIR}"
 end
 
 Cucumber::Rake::Task.new(:features => :compile)
+
+desc "Run all specs"
+task :spec => ["compile", "jasmine:ci"]
 
