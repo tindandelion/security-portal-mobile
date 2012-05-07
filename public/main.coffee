@@ -14,6 +14,3 @@ Ext.application
           Ext.Viewport.setActiveItem(home_screen)
       
     Ext.Viewport.setActiveItem(login_screen)
-    
-      
-    
