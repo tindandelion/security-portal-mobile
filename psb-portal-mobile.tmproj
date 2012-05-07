@@ -3,10 +3,12 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>../../Dropbox/apps/scriptogram/posts/2012-05-06.md</string>
+	<string>../../Dropbox/apps/scriptogram/posts/2012-05-07.md</string>
 	<key>documents</key>
 	<array>
 		<dict>
+			<key>expanded</key>
+			<true/>
 			<key>name</key>
 			<string>psb-portal-mobile</string>
 			<key>regexFolderFilter</key>
@@ -29,28 +31,14 @@
 	<integer>200</integer>
 	<key>metaData</key>
 	<dict>
-		<key>../../Dropbox/apps/scriptogram/posts/2011-12-31.md</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>340</integer>
-				<key>line</key>
-				<integer>12</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>../../Dropbox/apps/scriptogram/posts/2012-05-06.md</key>
+		<key>../../Dropbox/apps/scriptogram/posts/2012-05-07.md</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
 				<integer>0</integer>
 				<key>line</key>
-				<integer>15</integer>
+				<integer>5</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -71,28 +59,14 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
-		<key>public/Portal/ui/HomeScreen.coffee</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>12</integer>
-				<key>line</key>
-				<integer>4</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
 		<key>public/Portal/ui/LoginScreen.coffee</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>0</integer>
+				<integer>36</integer>
 				<key>line</key>
-				<integer>0</integer>
+				<integer>24</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -106,7 +80,7 @@
 				<key>column</key>
 				<integer>0</integer>
 				<key>line</key>
-				<integer>0</integer>
+				<integer>16</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -118,13 +92,11 @@
 	<array>
 		<string>public/Portal/ui/LoginScreen.coffee</string>
 		<string>public/main.coffee</string>
-		<string>public/Portal/ui/HomeScreen.coffee</string>
-		<string>../../Dropbox/apps/scriptogram/posts/2011-12-31.md</string>
-		<string>../../Dropbox/apps/scriptogram/posts/2012-05-06.md</string>
+		<string>../../Dropbox/apps/scriptogram/posts/2012-05-07.md</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>windowFrame</key>
-	<string>{{203, 4}, {1230, 874}}</string>
+	<string>{{210, 4}, {1230, 874}}</string>
 </dict>
 </plist>
