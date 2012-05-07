@@ -19,6 +19,7 @@ Ext.define 'Portal.ui.LoginScreen',
         text: 'Log in'
         ui: 'confirm'
       }]
-      
-  setLoginHandler: (fn) -> 
-    @child('#action').setHandler(fn)
+  
+  initialize: -> 
+    @callParent(arguments)
+    @child('#action').setHandler => @fireEvent('login')    
