@@ -1,21 +1,22 @@
 Ext.Loader.setPath('Portal', 'public/Portal')
 Ext.require ['Portal.ui.LoginScreen']
-
+    
 describe 'LoginScreen', ->
-  
   beforeEach ->
+    @addMatchers(EventMatchers)
+    
     @loginScreen = Ext.create('Portal.ui.LoginScreen')
+    @driver = new LoginScreenDriver(@loginScreen)
   
   afterEach -> 
     @loginScreen.destroy()
   
-  it 'initializes', ->
-    expect(@loginScreen).toBeDefined()
+  it 'fires the login request event when clicking on login button', -> 
+    loginHandler = jasmine.createSpy('login-handler')
+    @loginScreen.on 'loginRequest', loginHandler
     
-  it 'fires the login event when clicking on login button', -> 
-    eventFired = false
-    @loginScreen.on 'login', ->
-      eventFired = true
-      
-    @loginScreen.fireEvent('login')
-    expect(eventFired).toBeTruthy()
+    @driver.setCredentials('user-login', 'user-password')
+    @driver.clickLogin()
+    
+    expect(loginHandler).toBeFiredWith('user-login', 'user-password')
+    

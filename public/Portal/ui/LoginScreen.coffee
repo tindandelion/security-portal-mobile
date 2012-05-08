@@ -22,4 +22,6 @@ Ext.define 'Portal.ui.LoginScreen',
   
   initialize: -> 
     @callParent(arguments)
-    @child('#action').setHandler => @fireEvent('login')    
+    @child('#action').setHandler => 
+      credentials = @getValues()
+      @fireEvent('loginRequest', credentials.username, credentials.password)    

@@ -8,9 +8,8 @@ Ext.application
     login_screen = Ext.create 'Portal.ui.LoginScreen', 
       id: 'login-screen'
       listeners: 
-        login: -> 
-          credentials = login_screen.getValues()
-          home_screen.setUserName(credentials.username)
+        loginRequest: (username, password) -> 
+          home_screen.setUserName(username)
           Ext.Viewport.setActiveItem(home_screen)
       
     Ext.Viewport.setActiveItem(login_screen)
