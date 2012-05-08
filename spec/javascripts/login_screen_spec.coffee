@@ -3,7 +3,7 @@ Ext.require ['Portal.ui.LoginScreen']
     
 describe 'LoginScreen', ->
   beforeEach ->
-    @addMatchers(EventMatchers)
+    @addMatchers(SenchaEventMatchers)
     
     @loginScreen = Ext.create('Portal.ui.LoginScreen')
     @driver = new LoginScreenDriver(@loginScreen)
