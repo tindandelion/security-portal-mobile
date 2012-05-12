@@ -10,7 +10,7 @@ module PsbMobileSupport
   end
 
   def browser
-    @browser ||= Watir::Browser.new(:chrome)
+    @browser ||= Watir::Browser.new(:chrome, :switches => ['--disable-web-security'])
   end
   
   def on_home_screen?
