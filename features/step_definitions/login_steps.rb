@@ -9,5 +9,5 @@ Then /^a summary page for user "([^"]*)" is displayed$/ do |username|
 end
 
 Then /^the user "([^"]*)" with password "([^"]*)" is verified on the server$/ do |username, password|
-  validated_user.should == {"username" => username, "password" => password}
+  verify_validated_user username, password
 end

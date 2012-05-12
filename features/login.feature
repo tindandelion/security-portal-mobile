@@ -4,7 +4,7 @@ Feature: Logging into portal
   
   Scenario: User logs in successfully
     When a user "portal-user" logs in with password "password"
-    Then a summary page for user "portal-user" is displayed
-    And the user "portal-user" with password "password" is verified on the server
+    Then the user "portal-user" with password "password" is verified on the server
+    And a summary page for user "portal-user" is displayed
     
 
