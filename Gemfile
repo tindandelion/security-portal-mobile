@@ -4,6 +4,7 @@ gem "watir-webdriver"
 gem "cucumber"
 gem "jasmine"
 gem "sinatra"
+gem "json"
 
 group :development do
   gem "pry"

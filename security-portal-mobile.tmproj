@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>../../Dropbox/apps/scriptogram/posts/2012-05-07.md</string>
+	<string>public/main.coffee</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -33,20 +33,6 @@
 	<integer>200</integer>
 	<key>metaData</key>
 	<dict>
-		<key>../../Dropbox/apps/scriptogram/posts/2012-05-06.md</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>32</integer>
-				<key>line</key>
-				<integer>41</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>81</integer>
-			<key>firstVisibleLine</key>
-			<integer>31</integer>
-		</dict>
 		<key>../../Dropbox/apps/scriptogram/posts/2012-05-07.md</key>
 		<dict>
 			<key>caret</key>
@@ -57,62 +43,46 @@
 				<integer>68</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
-			<integer>0</integer>
+			<integer>230</integer>
 			<key>firstVisibleLine</key>
-			<integer>57</integer>
+			<integer>68</integer>
 		</dict>
-		<key>features/support/env.rb</key>
+		<key>../../Dropbox/apps/scriptogram/posts/2012-05-12.md</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>12</integer>
+				<integer>0</integer>
 				<key>line</key>
-				<integer>1</integer>
+				<integer>30</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>5</integer>
+		</dict>
+		<key>Gemfile</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>6</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
-		<key>public/Portal/ui/LoginScreen.coffee</key>
+		<key>features/login.feature</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
 				<integer>0</integer>
 				<key>line</key>
-				<integer>27</integer>
-			</dict>
-			<key>columnSelection</key>
-			<false/>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-			<key>selectFrom</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>0</integer>
-			</dict>
-			<key>selectTo</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>27</integer>
-			</dict>
-		</dict>
-		<key>public/main.coffee</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>15</integer>
+				<integer>8</integer>
 			</dict>
 			<key>columnSelection</key>
 			<false/>
@@ -132,77 +102,59 @@
 				<key>column</key>
 				<integer>0</integer>
 				<key>line</key>
-				<integer>15</integer>
+				<integer>8</integer>
 			</dict>
 		</dict>
-		<key>spec/javascripts/helpers/LoginScreenDriver.coffee</key>
+		<key>features/step_definitions/login_steps.rb</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>0</integer>
+				<integer>72</integer>
 				<key>line</key>
-				<integer>0</integer>
+				<integer>11</integer>
 			</dict>
-			<key>columnSelection</key>
-			<false/>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
-			<key>selectFrom</key>
-			<dict>
-				<key>column</key>
-				<integer>43</integer>
-				<key>line</key>
-				<integer>10</integer>
-			</dict>
-			<key>selectTo</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>0</integer>
-			</dict>
 		</dict>
-		<key>spec/javascripts/login_screen_spec.coffee</key>
+		<key>features/support/backend_server.rb</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>24</integer>
+				<integer>12</integer>
 				<key>line</key>
-				<integer>13</integer>
+				<integer>14</integer>
 			</dict>
-			<key>columnSelection</key>
-			<false/>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
-			<key>selectFrom</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>0</integer>
-			</dict>
-			<key>selectTo</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>22</integer>
-			</dict>
 		</dict>
-		<key>spec/javascripts/support/jasmine.yml</key>
+		<key>features/support/env.rb</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>19</integer>
+				<integer>12</integer>
 				<key>line</key>
-				<integer>13</integer>
+				<integer>1</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>public/main.coffee</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>7</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -213,12 +165,13 @@
 	<key>openDocuments</key>
 	<array>
 		<string>../../Dropbox/apps/scriptogram/posts/2012-05-07.md</string>
-		<string>../../Dropbox/apps/scriptogram/posts/2012-05-06.md</string>
+		<string>../../Dropbox/apps/scriptogram/posts/2012-05-12.md</string>
+		<string>features/support/backend_server.rb</string>
 		<string>public/main.coffee</string>
-		<string>public/Portal/ui/LoginScreen.coffee</string>
-		<string>spec/javascripts/support/jasmine.yml</string>
-		<string>spec/javascripts/helpers/LoginScreenDriver.coffee</string>
-		<string>spec/javascripts/login_screen_spec.coffee</string>
+		<string>Gemfile</string>
+		<string>features/step_definitions/login_steps.rb</string>
+		<string>features/support/env.rb</string>
+		<string>features/login.feature</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<true/>

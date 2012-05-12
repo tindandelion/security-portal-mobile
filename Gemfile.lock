@@ -65,6 +65,7 @@ PLATFORMS
 DEPENDENCIES
   cucumber
   jasmine
+  json
   pry
   rspec-expectations
   sinatra

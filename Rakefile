@@ -24,6 +24,12 @@ task :compile do
   sh "coffee --compile #{SPEC_DIR}"
 end
 
+desc "Run Sinatra server"
+task :server do 
+  require_relative "features/support/backend_server"
+  BackendServer.run!
+end
+
 Cucumber::Rake::Task.new(:features => :compile)
 
 desc "Run all specs"
