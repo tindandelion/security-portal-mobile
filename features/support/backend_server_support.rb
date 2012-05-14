@@ -23,6 +23,10 @@ module BackendServerSupport
     creds = wait_for_validated_user
     creds.should == {"username" => username, "password" => password}
   end
+  
+  def add_user(username, password)
+    server.add_user username, password
+  end
 end
 
 World(BackendServerSupport)

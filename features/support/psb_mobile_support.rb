@@ -1,6 +1,33 @@
 require "watir-webdriver"
 
-module PsbMobileSupport
+module SecurityPortalSupport
+  class Screen
+    def initialize(element)
+      @element = element
+    end
+    
+    def visible? 
+      not @element.class_name.include?('x-item-hidden')
+    end
+  end
+  
+  class LoginScreen < Screen
+    def credentials=(values)
+      @element.text_field(:name => "username").set values[:username]
+      @element.text_field(:name => "password").set values[:password]
+    end
+    
+    def login!
+      @element.div(:id => "action").click
+    end
+  end
+  
+  class HomeScreen < Screen
+    def current_user 
+      @element.div(:id => 'current-user').text
+    end
+  end
+  
   def start_application
     browser.goto(app_url)
   end
@@ -13,25 +40,22 @@ module PsbMobileSupport
     @browser ||= Watir::Browser.new(:chrome, :switches => ['--disable-web-security'])
   end
   
-  def on_home_screen?
-    home_screen = browser.div(:id =>'home-screen')
-    not home_screen.class_name.include?('x-item-hidden')
-  end
-  
-  def current_user
-    home_screen = browser.div(:id =>'home-screen')
-    home_screen.div(:id => 'current-user').text
-  end
-  
   def login_as(credentials)
-    login_screen = browser.form(:id => 'login-screen')
-    login_screen.text_field(:name => "username").set credentials[:username]
-    login_screen.text_field(:name => "password").set credentials[:password]
-    login_screen.div(:id => "action").click
+    screen = login_screen
+    screen.credentials = credentials
+    screen.login!
+  end
+  
+  def login_screen 
+    LoginScreen.new(browser.form(:id => 'login-screen'))
+  end
+  
+  def home_screen 
+    HomeScreen.new(browser.div(:id =>'home-screen'))
   end
 end
 
-World(PsbMobileSupport)
+World(SecurityPortalSupport)
 
 After do |scenario|
   browser.close unless scenario.failed? 

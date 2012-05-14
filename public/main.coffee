@@ -5,19 +5,22 @@ Ext.require [
 Ext.application
   name: 'Portal'
   launch: -> 
-    validateUser = (username, password) ->
+    validateUser = (params) ->
       Ext.Ajax.request
         url: "http://localhost:4567/validate"
         method: 'POST'
-        jsonData: {username, password}
+        jsonData: params.credentials
+        success: params.success
     
     home_screen = Ext.create 'Portal.ui.HomeScreen', id: 'home-screen'
     login_screen = Ext.create 'Portal.ui.LoginScreen', 
       id: 'login-screen'
       listeners: 
         loginRequest: (username, password) -> 
-          validateUser(username, password)
-          home_screen.setUserName(username)
-          Ext.Viewport.setActiveItem(home_screen)
+          validateUser
+            credentials: {username, password}
+            success: -> 
+              home_screen.setUserName(username)
+              Ext.Viewport.setActiveItem(home_screen)
       
     Ext.Viewport.setActiveItem(login_screen)
