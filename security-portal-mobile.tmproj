@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>public/main.coffee</string>
+	<string>features/support/backend_server.rb</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -33,70 +33,14 @@
 	<integer>200</integer>
 	<key>metaData</key>
 	<dict>
-		<key>../../Dropbox/apps/scriptogram/posts/2012-05-07.md</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>333</integer>
-				<key>line</key>
-				<integer>68</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>230</integer>
-			<key>firstVisibleLine</key>
-			<integer>68</integer>
-		</dict>
-		<key>../../Dropbox/apps/scriptogram/posts/2012-05-12.md</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>30</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>5</integer>
-		</dict>
-		<key>Gemfile</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>7</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>Rakefile</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>18</integer>
-				<key>line</key>
-				<integer>28</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
 		<key>features/login.feature</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>82</integer>
+				<integer>83</integer>
 				<key>line</key>
-				<integer>6</integer>
+				<integer>12</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -108,9 +52,9 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>42</integer>
+				<integer>60</integer>
 				<key>line</key>
-				<integer>11</integer>
+				<integer>20</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -122,65 +66,37 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>8</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>features/support/backend_server_support.rb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>2</integer>
+				<integer>31</integer>
 				<key>line</key>
 				<integer>21</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>features/support/env.rb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>12</integer>
-				<key>line</key>
-				<integer>1</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
+			<integer>9</integer>
 		</dict>
 		<key>features/support/psb_mobile_support.rb</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>82</integer>
+				<integer>43</integer>
 				<key>line</key>
-				<integer>12</integer>
+				<integer>44</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>5</integer>
+			<integer>18</integer>
 		</dict>
 		<key>public/main.coffee</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>10</integer>
+				<integer>56</integer>
 				<key>line</key>
-				<integer>20</integer>
+				<integer>26</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -190,16 +106,10 @@
 	</dict>
 	<key>openDocuments</key>
 	<array>
-		<string>../../Dropbox/apps/scriptogram/posts/2012-05-07.md</string>
 		<string>features/support/psb_mobile_support.rb</string>
-		<string>../../Dropbox/apps/scriptogram/posts/2012-05-12.md</string>
-		<string>features/support/backend_server.rb</string>
-		<string>Rakefile</string>
-		<string>features/support/backend_server_support.rb</string>
-		<string>public/main.coffee</string>
-		<string>Gemfile</string>
 		<string>features/step_definitions/login_steps.rb</string>
-		<string>features/support/env.rb</string>
+		<string>features/support/backend_server.rb</string>
+		<string>public/main.coffee</string>
 		<string>features/login.feature</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>

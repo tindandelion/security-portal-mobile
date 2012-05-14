@@ -12,6 +12,10 @@ Ext.application
         jsonData: params.credentials
         success: params.success
         failure: params.failure
+        
+    showLoginError = -> 
+      Ext.Msg.alert('Login error', 'Invalid user name or password')
+      
     
     home_screen = Ext.create 'Portal.ui.HomeScreen', id: 'home-screen'
     login_screen = Ext.create 'Portal.ui.LoginScreen', 
@@ -24,6 +28,6 @@ Ext.application
               home_screen.setUserName(username)
               Ext.Viewport.setActiveItem(home_screen)
             failure: (response) -> 
-              Ext.Msg.alert('Login error', response.body)
+              showLoginError()
       
     Ext.Viewport.setActiveItem(login_screen)

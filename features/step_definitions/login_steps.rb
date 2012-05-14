@@ -18,5 +18,5 @@ end
 
 Then /^the login error is shown$/ do
   login_screen.should be_visible
-  should have_shown_error(:title => 'Login error', :text => BackendServer::LOGIN_ERROR_MESSAGE)
+  should have_shown_error(:title => 'Login error', :text => 'Invalid user name or password')
 end
