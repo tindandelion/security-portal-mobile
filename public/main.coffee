@@ -9,8 +9,6 @@ Ext.application
       Ext.Ajax.request
         url: "http://localhost:4567/validate"
         method: 'POST'
-        useDefaultXhrHeader: false
-        withCredentials: true
         jsonData: {username, password}
     
     home_screen = Ext.create 'Portal.ui.HomeScreen', id: 'home-screen'

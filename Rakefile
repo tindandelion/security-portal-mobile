@@ -13,9 +13,10 @@ end
 
 PROJECT_DIR = Pathname.new(__FILE__).parent
 APP_DIR = PROJECT_DIR + "public"
+APP_URL = "file://" + (APP_DIR + "index.html").to_s
 SPEC_DIR = PROJECT_DIR + "spec"
 
-ENV['APP_URL'] = "file://" + (APP_DIR + "index.html").to_s
+ENV['APP_URL'] = APP_URL
 ENV['JASMINE_BROWSER'] = 'chrome'
 
 desc "Compile CoffeeScript files"
@@ -26,12 +27,28 @@ end
 
 desc "Run Sinatra server"
 task :server do 
-  require_relative "features/support/backend_server"
-  BackendServer.run!
+  start_server
+end
+
+desc "Run application"
+task :app => :compile do
+  open_browser
+  start_server
 end
 
 Cucumber::Rake::Task.new(:features => :compile)
 
 desc "Run all specs"
 task :spec => ["compile", "jasmine:ci"]
+
+def open_browser
+  require "watir-webdriver"
+  browser = Watir::Browser.new(:chrome, :switches => ['--disable-web-security'])
+  browser.goto APP_URL
+end
+
+def start_server
+  require_relative "features/support/backend_server"
+  BackendServer.run!
+end  
 
