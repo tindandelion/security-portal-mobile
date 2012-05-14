@@ -2,6 +2,8 @@ require "sinatra"
 require "json"
 
 class BackendServer < Sinatra::Base
+  LOGIN_ERROR_MESSAGE = "Invalid user name or password"
+  
   class << self
     attr_accessor :last_validated_user
     
@@ -34,7 +36,7 @@ class BackendServer < Sinatra::Base
     if self.class.valid_credentials?(credentials)
       halt 200
     else
-      halt 403
+      halt 401
     end
   end
 end

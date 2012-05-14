@@ -11,6 +11,7 @@ Ext.application
         method: 'POST'
         jsonData: params.credentials
         success: params.success
+        failure: params.failure
     
     home_screen = Ext.create 'Portal.ui.HomeScreen', id: 'home-screen'
     login_screen = Ext.create 'Portal.ui.LoginScreen', 
@@ -22,5 +23,7 @@ Ext.application
             success: -> 
               home_screen.setUserName(username)
               Ext.Viewport.setActiveItem(home_screen)
+            failure: (response) -> 
+              Ext.Msg.alert('Login error', response.body)
       
     Ext.Viewport.setActiveItem(login_screen)

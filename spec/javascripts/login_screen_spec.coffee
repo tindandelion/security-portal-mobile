@@ -19,4 +19,3 @@ describe 'LoginScreen', ->
     @driver.clickLogin()
     
     expect(loginHandler).toBeFiredWith('user-login', 'user-password')
-    

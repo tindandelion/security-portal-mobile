@@ -28,6 +28,24 @@ module SecurityPortalSupport
     end
   end
   
+  class MessageBox
+    def self.find(browser)
+      new(browser.div(:class => 'x-msgbox'))
+    end
+    
+    def initialize(element)
+      @element = element
+    end
+    
+    def title
+      @element.div(:class => 'x-title').text
+    end
+    
+    def text
+      @element.div(:class => 'x-body').text
+    end
+  end
+  
   def start_application
     browser.goto(app_url)
   end
@@ -52,6 +70,12 @@ module SecurityPortalSupport
   
   def home_screen 
     HomeScreen.new(browser.div(:id =>'home-screen'))
+  end
+  
+  def has_shown_error?(params)
+    box = MessageBox.find(browser)
+    box.title.should == params[:title]
+    box.text.should == params[:text]
   end
 end
 
