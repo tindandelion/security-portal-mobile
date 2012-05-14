@@ -11,3 +11,7 @@ end
 Then /^the user "([^"]*)" with password "([^"]*)" is verified on the server$/ do |username, password|
   verify_validated_user username, password
 end
+
+Then /^the login error is shown$/ do
+  pending # express the regexp above with the code you wish you had
+end

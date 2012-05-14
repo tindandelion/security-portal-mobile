@@ -7,4 +7,7 @@ Feature: Logging into portal
     Then the user "portal-user" with password "password" is verified on the server
     And a summary page for user "portal-user" is displayed
     
-
+  Scenario: User fails to log in 
+    When a user "missing-user" logs in with password "password"
+    Then the user "missing-user" with password "password" is verified on the server
+    And the login error is shown
