@@ -38,14 +38,19 @@ end
 
 Cucumber::Rake::Task.new(:features => :compile)
 
-desc "Run all specs"
+desc "Run unit specs"
 task :spec => ["compile", "jasmine:ci"]
+
+desc "Run all tests" 
+task :test => [:spec, :features]
 
 def open_browser
   require "watir-webdriver"
   browser = Watir::Browser.new(:chrome, :switches => ['--disable-web-security'])
   browser.goto APP_URL
 end
+
+
 
 def start_server
   require_relative "features/support/backend_server"
