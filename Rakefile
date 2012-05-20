@@ -47,11 +47,10 @@ task :test => [:spec, :features]
 def open_browser
   require "watir-webdriver"
   browser = Watir::Browser.new(:chrome, :switches => ['--disable-web-security'])
-  browser.goto APP_URL
+  browser.goto "http://localhost:9292"
 end
 
 def start_server
-  require_relative "server/backend_server"
-  BackendServer.run!
+  sh "rackup"
 end  
 
