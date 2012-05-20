@@ -1,5 +1,5 @@
 require "timeout"
-require_relative "backend_server"
+require_relative "../../server/backend_server"
 
 module BackendServerSupport
   REQUEST_TIMEOUT = 10

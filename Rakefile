@@ -12,8 +12,8 @@ rescue LoadError
 end
 
 PROJECT_DIR = Pathname.new(__FILE__).parent
-APP_DIR = PROJECT_DIR + "public"
-APP_URL = "file://" + (APP_DIR + "index.html").to_s
+APP_DIR = PROJECT_DIR + "client"
+APP_URL = "http://localhost:4567"
 SPEC_DIR = PROJECT_DIR + "spec"
 
 ENV['APP_URL'] = APP_URL
