@@ -7,7 +7,7 @@ Ext.application
   launch: -> 
     validateUser = (params) ->
       Ext.Ajax.request
-        url: "http://localhost:4567/validate"
+        url: "/validate"
         method: 'POST'
         jsonData: params.credentials
         success: params.success

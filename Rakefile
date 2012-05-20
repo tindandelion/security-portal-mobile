@@ -50,10 +50,8 @@ def open_browser
   browser.goto APP_URL
 end
 
-
-
 def start_server
-  require_relative "features/support/backend_server"
+  require_relative "server/backend_server"
   BackendServer.run!
 end  
 
