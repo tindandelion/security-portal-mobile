@@ -1,5 +1,8 @@
-Given /^there's a user "([^"]*)" with password "([^"]*)"$/ do |username, password|
-  add_user username, password
+Given /^there's a user$/ do |table|
+  user_info = OpenStruct.new(table.rows_hash)
+  backend.create_company user_info.company do |company|
+    company.add_user user_info.login, user_info.password
+  end
 end
 
 When /^a user "([^"]*)" logs in with password "([^"]*)"$/ do |username, password|
@@ -7,9 +10,9 @@ When /^a user "([^"]*)" logs in with password "([^"]*)"$/ do |username, password
   login_as :username => username, :password => password
 end
 
-Then /^a summary page for user "([^"]*)" is displayed$/ do |username|
+Then /^a summary page for company "([^"]*)" is displayed$/ do |company|
   home_screen.should be_visible
-  home_screen.current_user.should == username
+  home_screen.company.should eq(company)
 end
 
 Then /^the user "([^"]*)" with password "([^"]*)" is verified on the server$/ do |username, password|

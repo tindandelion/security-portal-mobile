@@ -2,12 +2,12 @@ require "sinatra"
 require "json"
 require "pathname"
 
-require_relative "user_validation"
+require_relative "account_management"
 
 class BackendServer < Sinatra::Base
-  extend UserValidation 
+  extend AccountManagement 
   
-  set :public_folder, Pathname(__FILE__).parent.parent + "client"
+  set :public_folder, Pathname(__FILE__).dirname.parent + "client"
   
   get '/' do 
     redirect "/index.html"

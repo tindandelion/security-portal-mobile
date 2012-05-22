@@ -5,9 +5,6 @@ Ext.define 'Portal.ui.HomeScreen',
     items: [
       {
         xtype: 'label'
-        id: 'current-user'
-        html: 'Current User'
+        id: 'company-name'
+        html: 'Company Name'
       }]
-      
-  setUserName: (value) ->
-    @child('#current-user').setHtml(value)

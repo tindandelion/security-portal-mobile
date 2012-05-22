@@ -8,6 +8,10 @@ module BackendServerSupport
     BackendServer
   end
   
+  def backend
+    BackendServer
+  end
+  
   def wait_for_validated_user
     Timeout.timeout REQUEST_TIMEOUT do 
       creds = server.last_validated_user

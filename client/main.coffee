@@ -25,7 +25,6 @@ Ext.application
           validateUser
             credentials: {username, password}
             success: -> 
-              home_screen.setUserName(username)
               Ext.Viewport.setActiveItem(home_screen)
             failure: (response) -> 
               showLoginError()

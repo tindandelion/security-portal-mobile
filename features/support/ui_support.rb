@@ -1,6 +1,5 @@
-require "watir-webdriver"
 
-module SecurityPortalSupport
+module SecurityPortalUiSupport
   class Screen
     def initialize(element)
       @element = element
@@ -23,8 +22,8 @@ module SecurityPortalSupport
   end
   
   class HomeScreen < Screen
-    def current_user 
-      @element.div(:id => 'current-user').text
+    def company 
+      @element.div(:id => 'company-name').text
     end
   end
   
@@ -46,17 +45,6 @@ module SecurityPortalSupport
     end
   end
   
-  def start_application
-    browser.goto(app_url)
-  end
-
-  def app_url
-    ENV['APP_URL'] or raise "APP_URL is not set"
-  end
-
-  def browser
-    @browser ||= Watir::Browser.new(:chrome, :switches => ['--disable-web-security'])
-  end
   
   def login_as(credentials)
     screen = login_screen
@@ -79,10 +67,4 @@ module SecurityPortalSupport
   end
 end
 
-World(SecurityPortalSupport)
-
-After do |scenario|
-  browser.close unless scenario.failed? 
-end
-
-
+World(SecurityPortalUiSupport)
