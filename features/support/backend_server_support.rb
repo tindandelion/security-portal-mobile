@@ -25,7 +25,7 @@ module BackendServerSupport
   
   def verify_validated_user(username, password)
     creds = wait_for_validated_user
-    creds.should == {"username" => username, "password" => password}
+    creds.should == {"login" => username, "password" => password}
   end
   
   def add_user(username, password)

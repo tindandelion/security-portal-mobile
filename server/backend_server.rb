@@ -17,11 +17,14 @@ class BackendServer < Sinatra::Base
     credentials = JSON.parse(request.body.read)
     self.class.last_validated_user = credentials
     
-    if self.class.valid_credentials?(credentials)
-      status 200
-    else
-      status 401
-    end
+    company = self.class.company_for_login(credentials["login"], credentials["password"])
+    unauthorized_user unless company
+    
+    { :company => company.name }.to_json
+  end
+  
+  def unauthorized_user 
+    halt 401
   end
 end
 

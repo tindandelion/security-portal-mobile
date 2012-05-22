@@ -11,9 +11,9 @@ module SecurityPortalUiSupport
   end
   
   class LoginScreen < Screen
-    def credentials=(values)
-      @element.text_field(:name => "username").set values[:username]
-      @element.text_field(:name => "password").set values[:password]
+    def fill_credentials(login, password)
+      @element.text_field(:name => "username").set login
+      @element.text_field(:name => "password").set password
     end
     
     def login!
@@ -46,9 +46,9 @@ module SecurityPortalUiSupport
   end
   
   
-  def login_as(credentials)
+  def login_as(login, password)
     screen = login_screen
-    screen.credentials = credentials
+    screen.fill_credentials(login, password)
     screen.login!
   end
   

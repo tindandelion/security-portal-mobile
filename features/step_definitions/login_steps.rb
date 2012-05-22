@@ -5,9 +5,9 @@ Given /^there's a user$/ do |table|
   end
 end
 
-When /^a user "([^"]*)" logs in with password "([^"]*)"$/ do |username, password|
+When /^a user "([^"]*)" logs in with password "([^"]*)"$/ do |login, password|
   start_application
-  login_as :username => username, :password => password
+  login_as login, password
 end
 
 Then /^a summary page for company "([^"]*)" is displayed$/ do |company|

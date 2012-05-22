@@ -34,11 +34,8 @@ module AccountManagement
     company
   end
   
-  def valid_credentials?(creds)
-    login = creds["username"]
-    password = creds["password"]
-    
-    companies.any? {|company| company.valid_user?(login, password)}
+  def company_for_login(login, password)
+    companies.find {|company| company.valid_user?(login, password)}
   end
   
   def reset
