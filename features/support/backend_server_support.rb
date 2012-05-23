@@ -4,20 +4,16 @@ require_relative "../../server/backend_server"
 module BackendServerSupport
   REQUEST_TIMEOUT = 10
   
-  def server
-    BackendServer
-  end
-  
   def backend
     BackendServer
   end
   
   def wait_for_validated_user
     Timeout.timeout REQUEST_TIMEOUT do 
-      creds = server.last_validated_user
+      creds = backend.last_validated_user
       until creds
         sleep 0.1
-        creds = server.last_validated_user
+        creds = backend.last_validated_user
       end
       return creds
     end
