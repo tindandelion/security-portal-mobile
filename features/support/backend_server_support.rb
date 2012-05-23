@@ -40,5 +40,7 @@ Before do
 end
 
 Thread.new do 
-  BackendServer.run!
+  BackendServer.run! do |webrick|
+    webrick.config[:AccessLog] = [] unless ENV['LOGGING'] == "true"
+  end
 end

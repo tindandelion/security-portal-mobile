@@ -4,7 +4,9 @@ Ext.define 'Portal.ui.HomeScreen',
     fullscreen: true
     items: [
       {
-        xtype: 'label'
+        xtype: 'titlebar'
         id: 'company-name'
-        html: 'Company Name'
+        title: 'Company Name'
       }]
+  setCompany: (company) ->
+    @child('#company-name').setTitle(company)

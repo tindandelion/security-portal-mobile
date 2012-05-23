@@ -10,7 +10,9 @@ Ext.application
         url: "/validate"
         method: 'POST'
         jsonData: params.credentials
-        success: params.success
+        success: (response) ->
+          context = Ext.decode(response.responseText) 
+          params.success(context)
         failure: params.failure
 
     home_screen = Ext.create 'Portal.ui.HomeScreen', id: 'home-screen'
@@ -20,7 +22,8 @@ Ext.application
         loginRequest: (login, password) -> 
           validateUser
             credentials: {login, password}
-            success: -> 
+            success: (context) -> 
+              home_screen.setCompany(context.company)
               Ext.Viewport.setActiveItem(home_screen)
             failure: (response) -> 
               Ext.Msg.alert('Login error', 'Invalid user name or password')
