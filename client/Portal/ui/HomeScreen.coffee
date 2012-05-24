@@ -1,39 +1,14 @@
-Ext.define 'Portal.ui.SummaryElement', 
+Ext.define 'Portal.ui.Placeholder', 
   extend: 'Ext.Panel'
-  xtype: 'summaryelement'
+  xtype: 'placeholder'
   config: 
-    baseCls: 'x-button-label'
-    cls: 'summary-element'
-
-Ext.define 'Portal.ui.SummaryPanel', 
-  extend: 'Ext.Panel'
-  xtype: 'summarypanel'
-  config: 
-    cls: 'summary-panel'
-    margin: '0.8em'
-    layout: 'hbox'
-    items: [
-      {
-        xtype: 'summaryelement'
-        flex: 1
-        html: 'Critical'
-      }
-      {
-        xtype: 'summaryelement'
-        flex: 1
-        html: 'Warnings'
-      }
-      {
-        xtype: 'summaryelement'
-        flex: 1
-        html: 'Protected'
-      }
-      ]
-
+    style: 'background-color: blue; opacity: 0.3'
+    
 Ext.define 'Portal.ui.HomeScreen',
-  extend: 'Ext.Panel'
+  extend: 'Ext.Container'
   config:
     fullscreen: true
+    layout: 'vbox'
     items: [
       {
         xtype: 'titlebar'
@@ -44,12 +19,29 @@ Ext.define 'Portal.ui.HomeScreen',
         styleHtmlContent: true
         cls: 'x-title'
         id: 'company-name'
+        dock: 'top'
         html: 'Company Name'
-      }
+      },
       {
-        xtype: 'summarypanel'
-        id: 'summary-panel'
-        docked: 'bottom'
+        xtype: 'container'
+        flex: 1
+        layout: 'vbox'
+        items: [
+          {
+            xtype: 'placeholder'
+            id: 'summary-chart'
+            html: 'Summary Chart'
+            flex: 1
+          }, 
+          {
+            xtype: 'placeholder'
+            id: 'summary-panel'
+            height: '4em'
+            margin: '0.8em 0 0 0'
+            dock: 'bottom'
+            html: 'Summary Buttons'
+          }]
       }]
+      
   setCompany: (company) ->
     @child('#company-name').setHtml(company)
