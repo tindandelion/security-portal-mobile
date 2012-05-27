@@ -1,11 +1,6 @@
-Ext.define 'Portal.ui.Placeholder', 
-  extend: 'Ext.Panel'
-  xtype: 'placeholder'
-  config: 
-    style: 'background-color: blue; opacity: 0.3'
-    
 Ext.define 'Portal.ui.HomeScreen',
   extend: 'Ext.Container'
+  requires: ['Portal.ui.Placeholder', 'Portal.ui.SummaryPanel']
   config:
     fullscreen: true
     layout: 'vbox'
@@ -34,12 +29,11 @@ Ext.define 'Portal.ui.HomeScreen',
             flex: 1
           }, 
           {
-            xtype: 'placeholder'
+            xtype: 'summarypanel'
             id: 'summary-panel'
             height: '4em'
             margin: '0.8em 0 0 0'
             dock: 'bottom'
-            html: 'Summary Buttons'
           }]
       }]
       

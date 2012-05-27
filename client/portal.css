@@ -1,7 +1,4 @@
-.summary-element {
-  border: 1px solid black;
-}
-
-.summary-panel {
-  height: 2.6em;
+.placeholder {
+  background-color: blue;
+  opacity: 0.3;
 }

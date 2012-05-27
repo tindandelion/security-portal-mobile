@@ -1,4 +1,3 @@
-Ext.Loader.setPath('Portal', 'client/Portal')
 Ext.require ['Portal.ui.LoginScreen']
     
 describe 'LoginScreen', ->

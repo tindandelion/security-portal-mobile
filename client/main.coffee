@@ -1,9 +1,10 @@
-Ext.require [
-  'Portal.ui.HomeScreen',
-  'Portal.ui.LoginScreen']
-
 Ext.application
   name: 'Portal'
+  appFolder: 'Portal'
+  requires: [
+    'Portal.ui.HomeScreen',
+    'Portal.ui.LoginScreen'
+    ]
   launch: -> 
     validateUser = (params) ->
       Ext.Ajax.request
