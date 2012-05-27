@@ -27,11 +27,12 @@ module SecurityPortalUiSupport
     end
     
     def summary
-      summary = @element.div(:id => 'summary-panel').
+      @element.div(:id => 'summary-panel').
         text.
         split.
-        collect {|ea| ea.downcase }
-      summary.each_slice(2).to_a
+        collect {|ea| ea.downcase }.
+        each_slice(2).
+        to_a
     end
   end
   
