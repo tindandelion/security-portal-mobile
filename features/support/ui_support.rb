@@ -22,8 +22,16 @@ module SecurityPortalUiSupport
   end
   
   class HomeScreen < Screen
-    def company 
+    def company_name 
       @element.div(:id => 'company-name').text
+    end
+    
+    def summary
+      summary = @element.div(:id => 'summary-panel').
+        text.
+        split.
+        collect {|ea| ea.downcase }
+      summary.each_slice(2).to_a
     end
   end
   

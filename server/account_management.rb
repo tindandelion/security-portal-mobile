@@ -3,6 +3,7 @@ module AccountManagement
   
   class Company
     attr_accessor :name
+    attr_accessor :summary
     
     def initialize(name)
       @name = name
@@ -23,7 +24,7 @@ module AccountManagement
     @companies ||= Array.new
   end
   
-  def create_company(name, &block)
+  def with_company(name, &block)
     company = companies.find { |c| c.name = name }
     unless company
       company = Company.new(name)
@@ -31,7 +32,6 @@ module AccountManagement
     end
     
     block.call(company) if block
-    company
   end
   
   def company_for_login(login, password)

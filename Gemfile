@@ -8,6 +8,7 @@ gem "json"
 
 group :development do
   gem "pry"
+  gem "pry-doc"
   gem "rspec-expectations"
 end
 

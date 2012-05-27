@@ -41,6 +41,11 @@ end
 
 Cucumber::Rake::Task.new(:features => :compile)
 
+desc "Features in progress" 
+Cucumber::Rake::Task.new("features:wip" => :compile) do |t|
+  t.cucumber_opts = ['--tags', '@wip']
+end
+
 desc "Run unit specs"
 task :spec => ["compile", "jasmine:ci"]
 
