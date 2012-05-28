@@ -8,6 +8,11 @@ module AccountManagement
     def initialize(name)
       @name = name
       @users = Hash.new
+      @summary = {
+        :critical => 0, 
+        :warning => 0,
+        :protected => 0
+      }
     end
     
     def add_user(login, password)

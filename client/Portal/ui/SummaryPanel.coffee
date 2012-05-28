@@ -7,19 +7,26 @@ Ext.define 'Portal.ui.SummaryPanel',
     items: [
       {
         xtype: 'summarypanelitem'
-        count: 5
         label: 'CRITICAL'
+        itemId: 'critical'
         flex: 1
       },
       {
         xtype: 'summarypanelitem',
-        count: 2
         label: 'WARNING'
+        itemId: 'warning'
         flex: 1
       },
       {
         xtype: 'summarypanelitem',
-        count: 1
         label: 'PROTECTED'
+        itemId: 'protected'
         flex: 1
       }]
+      
+  setSummary: (summary) -> 
+    for item in @summaryPanelItems()
+      item.setCount(summary[item.getItemId()])
+
+  summaryPanelItems: -> 
+    @getItems().items

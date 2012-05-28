@@ -18,24 +18,18 @@ Ext.define 'Portal.ui.HomeScreen',
         html: 'Company Name'
       },
       {
-        xtype: 'container'
+        xtype: 'placeholder'
+        html: 'Summary Chart'
         flex: 1
-        layout: 'vbox'
-        items: [
-          {
-            xtype: 'placeholder'
-            id: 'summary-chart'
-            html: 'Summary Chart'
-            flex: 1
-          }, 
-          {
-            xtype: 'summarypanel'
-            id: 'summary-panel'
-            height: '4em'
-            margin: '0.8em 0 0 0'
-            dock: 'bottom'
-          }]
+      },
+      {
+        xtype: 'summarypanel'
+        id: 'summary-panel'
+        height: '4em'
+        margin: '0.8em 0 0 0'
+        dock: 'bottom'
       }]
       
-  setCompany: (company) ->
-    @child('#company-name').setHtml(company)
+  setSummary: (context) ->
+    @child('#company-name').setHtml(context.company_name)
+    @child('#summary-panel').setSummary(context.summary)

@@ -20,7 +20,10 @@ class BackendServer < Sinatra::Base
     company = self.class.company_for_login(credentials["login"], credentials["password"])
     unauthorized_user unless company
     
-    { :company => company.name }.to_json
+    { 
+      :company_name => company.name,
+      :summary => company.summary 
+    }.to_json
   end
   
   def unauthorized_user 

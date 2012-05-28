@@ -23,8 +23,8 @@ Ext.application
         loginRequest: (login, password) -> 
           validateUser
             credentials: {login, password}
-            success: (context) -> 
-              home_screen.setCompany(context.company)
+            success: (summary) -> 
+              home_screen.setSummary(summary)
               Ext.Viewport.setActiveItem(home_screen)
             failure: (response) -> 
               Ext.Msg.alert('Login error', 'Invalid user name or password')
