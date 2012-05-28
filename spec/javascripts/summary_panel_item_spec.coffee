@@ -1,19 +1,14 @@
 Ext.require ['Portal.ui.SummaryPanelItem']
 
-HtmlMatchers = 
+ChildMatchers = 
   toHaveChild: (id, params) ->
-    console.log(@actual)
     child = @actual.child(id)
     expect(child.getHtml()).toEqual(params.withHtml)
-    return true
-    
-  toContainHtml: (html) ->
-    expect(@actual.getHtml()).toEqual(html)
     return true
 
 describe "SummaryPanelItem", ->
   beforeEach -> 
-    @addMatchers(HtmlMatchers)
+    @addMatchers(ChildMatchers)
     @panel = Ext.create('Portal.ui.SummaryPanelItem') 
     
   afterEach -> 

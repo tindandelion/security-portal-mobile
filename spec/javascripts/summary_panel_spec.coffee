@@ -1,21 +1,24 @@
 Ext.require ['Portal.ui.SummaryPanel']
 
 describe 'SummaryPanel', ->
+  beforeEach ->
+    @panel = Ext.create('Portal.ui.SummaryPanel')
     
-  it "gets created", ->
-    panel = Ext.create('Portal.ui.SummaryPanel')
-    expect(panel.items.length).toEqual(3)
+  afterEach ->
+    @panel.destroy()
     
-  it "sets corresponding count values", ->
-    panel = Ext.create 'Portal.ui.SummaryPanel'
+  it "gets created with correct number of items", ->
+    expect(@panel.summaryPanelItems().length).toEqual(3)
+    
+  it "sets count values to corresponding items", ->
     summary = 
       critical: 5
       warning: 6
       protected: 1
       
-    panel.setSummary(summary)
+    @panel.setSummary(summary)
     
-    expect(panel.child('#critical').getCount()).toEqual(5)
-    expect(panel.child('#warning').getCount()).toEqual(6)
-    expect(panel.child('#protected').getCount()).toEqual(1)
+    expect(@panel.child('#critical').getCount()).toEqual(5)
+    expect(@panel.child('#warning').getCount()).toEqual(6)
+    expect(@panel.child('#protected').getCount()).toEqual(1)
     
