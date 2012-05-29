@@ -19,7 +19,7 @@ SPEC_DIR = PROJECT_DIR + "spec"
 ENV['APP_URL'] = APP_URL
 ENV['JASMINE_BROWSER'] = 'chrome'
 
-CLEAN.include (APP_DIR + "Portal" + "**/*.js").to_s
+CLEAN.include (APP_DIR + "app" + "**/*.js").to_s
 CLEAN.include (SPEC_DIR + "**/*.js").to_s
 
 desc "Compile CoffeeScript files"

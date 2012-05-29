@@ -1,1 +1,1 @@
-Ext.Loader.setPath('Portal', 'client/Portal')
+Ext.Loader.setPath('Portal', 'client/app')
