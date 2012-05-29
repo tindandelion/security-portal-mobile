@@ -1,4 +1,3 @@
-@wip
 Feature: Protection summary
   In order to monitor the health state of my environment
   As a company user

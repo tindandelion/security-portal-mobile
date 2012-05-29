@@ -19,7 +19,6 @@ Ext.define 'Portal.ui.HomeScreen',
       },
       {
         xtype: 'placeholder'
-        html: 'Summary Chart'
         flex: 1
       },
       {
