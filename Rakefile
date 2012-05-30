@@ -22,11 +22,19 @@ ENV['JASMINE_BROWSER'] = 'chrome'
 CLEAN.include (APP_DIR + "app" + "**/*.js").to_s
 CLEAN.include (SPEC_DIR + "**/*.js").to_s
 
-desc "Compile CoffeeScript files"
-task :compile do
-  sh "coffee --compile #{APP_DIR}"
-  sh "coffee --compile #{SPEC_DIR}"
-end
+namespace 'compile' do 
+  desc 'Compile CoffeeScript files'
+  task 'coffee' do
+    sh "coffee --compile #{APP_DIR}"
+    sh "coffee --compile #{SPEC_DIR}"
+  end
+  
+  task 'css' do 
+    sh "compass compile #{APP_DIR + 'styles'}"
+  end
+end  
+
+task 'compile' => ['compile:coffee', 'compile:css']
 
 desc "Run Sinatra server"
 task :server do 
@@ -34,23 +42,25 @@ task :server do
 end
 
 desc "Run application"
-task :app => :compile do
+task 'app' => 'compile' do
   open_browser
   start_server
 end
 
-Cucumber::Rake::Task.new(:features => :compile)
-
-desc "Features in progress" 
-Cucumber::Rake::Task.new("features:wip" => :compile) do |t|
-  t.cucumber_opts = ['--tags', '@wip']
+namespace 'features' do 
+  Cucumber::Rake::Task.new('all' => 'compile')
+  Cucumber::Rake::Task.new('wip' => 'compile') do |t|
+    t.cucumber_opts = ['--tags', '@wip']
+  end
 end
 
-desc "Run unit specs"
-task :spec => ["compile", "jasmine:ci"]
+task 'features' => 'features:all'
 
-desc "Run all tests" 
-task :test => [:spec, :features]
+desc 'Run unit specs'
+task 'spec' => ['compile', 'jasmine:ci']
+
+desc 'Run all tests'
+task 'test' => ['spec', 'features']
 
 def open_browser
   require "watir-webdriver"
