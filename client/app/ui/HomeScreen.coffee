@@ -24,8 +24,6 @@ Ext.define 'Portal.ui.HomeScreen',
       {
         xtype: 'summarypanel'
         id: 'summary-panel'
-        height: '4em'
-        margin: '0.8em 0 0 0'
         dock: 'bottom'
       }]
       

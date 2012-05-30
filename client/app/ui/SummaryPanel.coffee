@@ -4,21 +4,25 @@ Ext.define 'Portal.ui.SummaryPanel',
   xtype: 'summarypanel'
   config: 
     layout: 'hbox'
+    cls: 'summary-panel'
     items: [
       {
         xtype: 'summarypanelitem'
+        cls: 'critical'
         label: 'CRITICAL'
         itemId: 'critical'
         flex: 1
       },
       {
         xtype: 'summarypanelitem',
+        cls: 'warning'
         label: 'WARNING'
         itemId: 'warning'
         flex: 1
       },
       {
         xtype: 'summarypanelitem',
+        cls: 'protected'
         label: 'PROTECTED'
         itemId: 'protected'
         flex: 1

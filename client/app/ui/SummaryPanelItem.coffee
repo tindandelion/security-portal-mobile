@@ -6,9 +6,10 @@ Ext.define 'Portal.ui.SummaryPanelItem',
     label: '' 
     count: 0
     
+    baseCls: 'summary-panel-item'
     items: [
-      { xtype: 'label', itemId: 'label' }, 
-      { xtype: 'label', itemId: 'count' }]
+      { xtype: 'label', cls: 'label', itemId: 'label' }, 
+      { xtype: 'label', cls: 'count', itemId: 'count' }]
       
   updateLabel: (newValue, oldValue) -> 
     @child('#label').setHtml(newValue)

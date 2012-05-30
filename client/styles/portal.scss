@@ -1,3 +1,22 @@
+// Solarized color theme
+$solarized-base-00: #657b83;
+$solarized-base-01: #586e75;
+$solarized-base-02: #073642;
+$solarized-base-2: #eee8d5;
+$solarized-base-3: #fdf6e3;
+
+$solarized-red: #dc322f;
+$solarized-yellow: #b58900;
+$solarized-green: #859900;
+$solarized-cyan: #2aa198;
+
+// Color scheme
+$page-bg-color: $solarized-base-3;
+$toolbar-base-color: $solarized-base-00;
+
+// Dimentions
+$default-padding: 13px;
+
 @import 'sencha-touch/default/all';
 
 // You may remove any of the following modules that you
@@ -17,6 +36,45 @@
 @include sencha-msgbox;
 
 .placeholder {
-  background-color: blue;
-  opacity: 0.3;
+  background-color: desaturate($page-bg-color, 60%);
 }
+
+.summary-panel {
+  padding: $default-padding;
+  
+  .critical {
+    color: $solarized-red;
+  }
+  
+  .warning {
+    color: $solarized-yellow;
+  }
+  
+  .protected {
+    color: $solarized-cyan;
+  }
+}
+
+.summary-panel-item {
+  text-align: center;
+  background-color: $solarized-base-2;
+  padding: $default-padding;
+  
+  &:first-child {
+    @include border-left-radius(10px);
+  };
+  
+  &:last-child {
+    @include border-right-radius(10px);
+  };
+  
+  .label {
+    font-size: .6em;
+  }
+  
+  .count {
+    font-size: 1.8em;
+    font-weight: bold;
+  }
+}
+

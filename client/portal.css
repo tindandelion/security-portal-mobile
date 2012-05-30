@@ -817,7 +817,7 @@ input, textarea {
 
 /* line 183, sencha/resources/themes/stylesheets/sencha-touch/default/core/_core.scss */
 .x-layout-card-item {
-  background: #eeeeee;
+  background: #fdf6e3;
 }
 
 /* line 1, sencha/resources/themes/stylesheets/sencha-touch/default/widgets/_map.scss */
@@ -7395,10 +7395,10 @@ audio {
 /* line 128, sencha/resources/themes/stylesheets/sencha-touch/default/widgets/_toolbar.scss */
 .x-toolbar-dark {
   background-image: none;
-  background-color: #1468a2;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #1e93e4), color-stop(3%, #1676b9), color-stop(100%, #11598c));
-  background-image: -webkit-linear-gradient(top, #1e93e4, #1676b9 3%, #11598c);
-  background-image: linear-gradient(top, #1e93e4, #1676b9 3%, #11598c);
+  background-color: #4f6066;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #708891), color-stop(3%, #5a6d75), color-stop(100%, #445258));
+  background-image: -webkit-linear-gradient(top, #708891, #5a6d75 3%, #445258);
+  background-image: linear-gradient(top, #708891, #5a6d75 3%, #445258);
   border-color: black;
 }
 /* line 132, sencha/resources/themes/stylesheets/sencha-touch/default/widgets/_toolbar.scss */
@@ -7428,8 +7428,8 @@ audio {
 .x-toolbar-dark .x-field-select .x-component-outer,
 .x-toolbar-dark .x-field-select .x-component-outer:before, .x-toolbar
 .x-toolbar-dark .x-field-select .x-component-outer:before {
-  border: 1px solid #061f31;
-  border-top-color: #092e47;
+  border: 1px solid #171c1e;
+  border-top-color: #222a2d;
   color: white;
 }
 /* line 37, sencha/resources/themes/stylesheets/sencha-touch/default/_mixins.scss */
@@ -7442,7 +7442,7 @@ audio {
 .x-toolbar-dark .x-field-select .x-component-outer:before.x-button-forward:before, .x-toolbar
 .x-toolbar-dark .x-field-select .x-component-outer:before.x-button-back:before, .x-toolbar
 .x-toolbar-dark .x-field-select .x-component-outer:before.x-button-forward:before {
-  background: #061f31;
+  background: #171c1e;
 }
 /* line 41, sencha/resources/themes/stylesheets/sencha-touch/default/_mixins.scss */
 .x-toolbar-dark .x-button, .x-toolbar-dark .x-button.x-button-back:after, .x-toolbar-dark .x-button.x-button-forward:after, .x-toolbar .x-toolbar-dark .x-button, .x-toolbar .x-toolbar-dark .x-button.x-button-back:after, .x-toolbar .x-toolbar-dark .x-button.x-button-forward:after,
@@ -7459,10 +7459,10 @@ audio {
 .x-toolbar-dark .x-field-select .x-component-outer:before.x-button-back:after, .x-toolbar
 .x-toolbar-dark .x-field-select .x-component-outer:before.x-button-forward:after {
   background-image: none;
-  background-color: #11598c;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #1985d0), color-stop(3%, #1468a2), color-stop(100%, #0e4b75));
-  background-image: -webkit-linear-gradient(top, #1985d0, #1468a2 3%, #0e4b75);
-  background-image: linear-gradient(top, #1985d0, #1468a2 3%, #0e4b75);
+  background-color: #445258;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #657b83), color-stop(3%, #4f6066), color-stop(100%, #394549));
+  background-image: -webkit-linear-gradient(top, #657b83, #4f6066 3%, #394549);
+  background-image: linear-gradient(top, #657b83, #4f6066 3%, #394549);
 }
 /* line 45, sencha/resources/themes/stylesheets/sencha-touch/default/_mixins.scss */
 .x-toolbar-dark .x-button .x-button-icon.x-icon-mask, .x-toolbar .x-toolbar-dark .x-button .x-button-icon.x-icon-mask,
@@ -7472,9 +7472,9 @@ audio {
 .x-toolbar-dark .x-field-select .x-component-outer:before .x-button-icon.x-icon-mask {
   background-image: none;
   background-color: white;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(3%, #ffffff), color-stop(100%, #e8f4fc));
-  background-image: -webkit-linear-gradient(top, #ffffff, #ffffff 3%, #e8f4fc);
-  background-image: linear-gradient(top, #ffffff, #ffffff 3%, #e8f4fc);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(3%, #ffffff), color-stop(100%, #f1f3f4));
+  background-image: -webkit-linear-gradient(top, #ffffff, #ffffff 3%, #f1f3f4);
+  background-image: linear-gradient(top, #ffffff, #ffffff 3%, #f1f3f4);
 }
 /* line 50, sencha/resources/themes/stylesheets/sencha-touch/default/_mixins.scss */
 .x-toolbar-dark .x-button.x-button-pressing, .x-toolbar-dark .x-button.x-button-pressing:after, .x-toolbar-dark .x-button.x-button-pressed, .x-toolbar-dark .x-button.x-button-pressed:after, .x-toolbar-dark .x-button.x-button-active, .x-toolbar-dark .x-button.x-button-active:after, .x-toolbar .x-toolbar-dark .x-button.x-button-pressing, .x-toolbar .x-toolbar-dark .x-button.x-button-pressing:after, .x-toolbar .x-toolbar-dark .x-button.x-button-pressed, .x-toolbar .x-toolbar-dark .x-button.x-button-pressed:after, .x-toolbar .x-toolbar-dark .x-button.x-button-active, .x-toolbar .x-toolbar-dark .x-button.x-button-active:after,
@@ -7503,10 +7503,10 @@ audio {
 .x-toolbar-dark .x-field-select .x-component-outer:before.x-button-active, .x-toolbar
 .x-toolbar-dark .x-field-select .x-component-outer:before.x-button-active:after {
   background-image: none;
-  background-color: #0f517e;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0a3351), color-stop(10%, #0c4267), color-stop(65%, #0f517e), color-stop(100%, #0f5280));
-  background-image: -webkit-linear-gradient(top, #0a3351, #0c4267 10%, #0f517e 65%, #0f5280);
-  background-image: linear-gradient(top, #0a3351, #0c4267 10%, #0f517e 65%, #0f5280);
+  background-color: #3d4a4f;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #272f32), color-stop(10%, #323d41), color-stop(65%, #3d4a4f), color-stop(100%, #3e4c51));
+  background-image: -webkit-linear-gradient(top, #272f32, #323d41 10%, #3d4a4f 65%, #3e4c51);
+  background-image: linear-gradient(top, #272f32, #323d41 10%, #3d4a4f 65%, #3e4c51);
 }
 /* line 159, sencha/resources/themes/stylesheets/sencha-touch/default/widgets/_toolbar.scss */
 .x-toolbar-dark .x-form-label {
@@ -7517,10 +7517,10 @@ audio {
 /* line 128, sencha/resources/themes/stylesheets/sencha-touch/default/widgets/_toolbar.scss */
 .x-toolbar-light {
   background-image: none;
-  background-color: #1985d0;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #4ca9e9), color-stop(3%, #1e93e4), color-stop(100%, #1676b9));
-  background-image: -webkit-linear-gradient(top, #4ca9e9, #1e93e4 3%, #1676b9);
-  background-image: linear-gradient(top, #4ca9e9, #1e93e4 3%, #1676b9);
+  background-color: #657b83;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #8da0a7), color-stop(3%, #708891), color-stop(100%, #5a6d75));
+  background-image: -webkit-linear-gradient(top, #8da0a7, #708891 3%, #5a6d75);
+  background-image: linear-gradient(top, #8da0a7, #708891 3%, #5a6d75);
   border-color: black;
 }
 /* line 132, sencha/resources/themes/stylesheets/sencha-touch/default/widgets/_toolbar.scss */
@@ -7546,37 +7546,37 @@ audio {
 }
 /* line 32, sencha/resources/themes/stylesheets/sencha-touch/default/_mixins.scss */
 .x-toolbar-light .x-button, .x-toolbar .x-toolbar-light .x-button, .x-toolbar-light .x-field-select .x-component-outer, .x-toolbar .x-toolbar-light .x-field-select .x-component-outer, .x-toolbar-light .x-field-select .x-component-outer:before, .x-toolbar .x-toolbar-light .x-field-select .x-component-outer:before {
-  border: 1px solid #0b3c5e;
-  border-top-color: #0e4b75;
+  border: 1px solid #2d373b;
+  border-top-color: #394549;
   color: white;
 }
 /* line 37, sencha/resources/themes/stylesheets/sencha-touch/default/_mixins.scss */
 .x-toolbar-light .x-button.x-button-back:before, .x-toolbar-light .x-button.x-button-forward:before, .x-toolbar .x-toolbar-light .x-button.x-button-back:before, .x-toolbar .x-toolbar-light .x-button.x-button-forward:before, .x-toolbar-light .x-field-select .x-component-outer.x-button-back:before, .x-toolbar-light .x-field-select .x-component-outer.x-button-forward:before, .x-toolbar .x-toolbar-light .x-field-select .x-component-outer.x-button-back:before, .x-toolbar .x-toolbar-light .x-field-select .x-component-outer.x-button-forward:before, .x-toolbar-light .x-field-select .x-component-outer:before.x-button-back:before, .x-toolbar-light .x-field-select .x-component-outer:before.x-button-forward:before, .x-toolbar .x-toolbar-light .x-field-select .x-component-outer:before.x-button-back:before, .x-toolbar .x-toolbar-light .x-field-select .x-component-outer:before.x-button-forward:before {
-  background: #0b3c5e;
+  background: #2d373b;
 }
 /* line 41, sencha/resources/themes/stylesheets/sencha-touch/default/_mixins.scss */
 .x-toolbar-light .x-button, .x-toolbar-light .x-button.x-button-back:after, .x-toolbar-light .x-button.x-button-forward:after, .x-toolbar .x-toolbar-light .x-button, .x-toolbar .x-toolbar-light .x-button.x-button-back:after, .x-toolbar .x-toolbar-light .x-button.x-button-forward:after, .x-toolbar-light .x-field-select .x-component-outer, .x-toolbar-light .x-field-select .x-component-outer.x-button-back:after, .x-toolbar-light .x-field-select .x-component-outer.x-button-forward:after, .x-toolbar .x-toolbar-light .x-field-select .x-component-outer, .x-toolbar .x-toolbar-light .x-field-select .x-component-outer.x-button-back:after, .x-toolbar .x-toolbar-light .x-field-select .x-component-outer.x-button-forward:after, .x-toolbar-light .x-field-select .x-component-outer:before, .x-toolbar-light .x-field-select .x-component-outer:before.x-button-back:after, .x-toolbar-light .x-field-select .x-component-outer:before.x-button-forward:after, .x-toolbar .x-toolbar-light .x-field-select .x-component-outer:before, .x-toolbar .x-toolbar-light .x-field-select .x-component-outer:before.x-button-back:after, .x-toolbar .x-toolbar-light .x-field-select .x-component-outer:before.x-button-forward:after {
   background-image: none;
-  background-color: #1676b9;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #359ee7), color-stop(3%, #1985d0), color-stop(100%, #1468a2));
-  background-image: -webkit-linear-gradient(top, #359ee7, #1985d0 3%, #1468a2);
-  background-image: linear-gradient(top, #359ee7, #1985d0 3%, #1468a2);
+  background-color: #5a6d75;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #7f949c), color-stop(3%, #657b83), color-stop(100%, #4f6066));
+  background-image: -webkit-linear-gradient(top, #7f949c, #657b83 3%, #4f6066);
+  background-image: linear-gradient(top, #7f949c, #657b83 3%, #4f6066);
 }
 /* line 45, sencha/resources/themes/stylesheets/sencha-touch/default/_mixins.scss */
 .x-toolbar-light .x-button .x-button-icon.x-icon-mask, .x-toolbar .x-toolbar-light .x-button .x-button-icon.x-icon-mask, .x-toolbar-light .x-field-select .x-component-outer .x-button-icon.x-icon-mask, .x-toolbar .x-toolbar-light .x-field-select .x-component-outer .x-button-icon.x-icon-mask, .x-toolbar-light .x-field-select .x-component-outer:before .x-button-icon.x-icon-mask, .x-toolbar .x-toolbar-light .x-field-select .x-component-outer:before .x-button-icon.x-icon-mask {
   background-image: none;
   background-color: white;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(3%, #ffffff), color-stop(100%, #e8f4fc));
-  background-image: -webkit-linear-gradient(top, #ffffff, #ffffff 3%, #e8f4fc);
-  background-image: linear-gradient(top, #ffffff, #ffffff 3%, #e8f4fc);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(3%, #ffffff), color-stop(100%, #f1f3f4));
+  background-image: -webkit-linear-gradient(top, #ffffff, #ffffff 3%, #f1f3f4);
+  background-image: linear-gradient(top, #ffffff, #ffffff 3%, #f1f3f4);
 }
 /* line 50, sencha/resources/themes/stylesheets/sencha-touch/default/_mixins.scss */
 .x-toolbar-light .x-button.x-button-pressing, .x-toolbar-light .x-button.x-button-pressing:after, .x-toolbar-light .x-button.x-button-pressed, .x-toolbar-light .x-button.x-button-pressed:after, .x-toolbar-light .x-button.x-button-active, .x-toolbar-light .x-button.x-button-active:after, .x-toolbar .x-toolbar-light .x-button.x-button-pressing, .x-toolbar .x-toolbar-light .x-button.x-button-pressing:after, .x-toolbar .x-toolbar-light .x-button.x-button-pressed, .x-toolbar .x-toolbar-light .x-button.x-button-pressed:after, .x-toolbar .x-toolbar-light .x-button.x-button-active, .x-toolbar .x-toolbar-light .x-button.x-button-active:after, .x-toolbar-light .x-field-select .x-component-outer.x-button-pressing, .x-toolbar-light .x-field-select .x-component-outer.x-button-pressing:after, .x-toolbar-light .x-field-select .x-component-outer.x-button-pressed, .x-toolbar-light .x-field-select .x-component-outer.x-button-pressed:after, .x-toolbar-light .x-field-select .x-component-outer.x-button-active, .x-toolbar-light .x-field-select .x-component-outer.x-button-active:after, .x-toolbar .x-toolbar-light .x-field-select .x-component-outer.x-button-pressing, .x-toolbar .x-toolbar-light .x-field-select .x-component-outer.x-button-pressing:after, .x-toolbar .x-toolbar-light .x-field-select .x-component-outer.x-button-pressed, .x-toolbar .x-toolbar-light .x-field-select .x-component-outer.x-button-pressed:after, .x-toolbar .x-toolbar-light .x-field-select .x-component-outer.x-button-active, .x-toolbar .x-toolbar-light .x-field-select .x-component-outer.x-button-active:after, .x-toolbar-light .x-field-select .x-component-outer:before.x-button-pressing, .x-toolbar-light .x-field-select .x-component-outer:before.x-button-pressing:after, .x-toolbar-light .x-field-select .x-component-outer:before.x-button-pressed, .x-toolbar-light .x-field-select .x-component-outer:before.x-button-pressed:after, .x-toolbar-light .x-field-select .x-component-outer:before.x-button-active, .x-toolbar-light .x-field-select .x-component-outer:before.x-button-active:after, .x-toolbar .x-toolbar-light .x-field-select .x-component-outer:before.x-button-pressing, .x-toolbar .x-toolbar-light .x-field-select .x-component-outer:before.x-button-pressing:after, .x-toolbar .x-toolbar-light .x-field-select .x-component-outer:before.x-button-pressed, .x-toolbar .x-toolbar-light .x-field-select .x-component-outer:before.x-button-pressed:after, .x-toolbar .x-toolbar-light .x-field-select .x-component-outer:before.x-button-active, .x-toolbar .x-toolbar-light .x-field-select .x-component-outer:before.x-button-active:after {
   background-image: none;
-  background-color: #156eac;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0f517e), color-stop(10%, #125f95), color-stop(65%, #156eac), color-stop(100%, #156fae));
-  background-image: -webkit-linear-gradient(top, #0f517e, #125f95 10%, #156eac 65%, #156fae);
-  background-image: linear-gradient(top, #0f517e, #125f95 10%, #156eac 65%, #156fae);
+  background-color: #53656c;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #3d4a4f), color-stop(10%, #48585e), color-stop(65%, #53656c), color-stop(100%, #54676d));
+  background-image: -webkit-linear-gradient(top, #3d4a4f, #48585e 10%, #53656c 65%, #54676d);
+  background-image: linear-gradient(top, #3d4a4f, #48585e 10%, #53656c 65%, #54676d);
 }
 /* line 159, sencha/resources/themes/stylesheets/sencha-touch/default/widgets/_toolbar.scss */
 .x-toolbar-light .x-form-label {
@@ -9416,8 +9416,54 @@ input[type="search"]::-webkit-search-cancel-button {
   border: 0.1em solid rgba(25, 133, 208, 0.9);
 }
 
-/* line 19, styles/portal.scss */
+/* line 38, styles/portal.scss */
 .placeholder {
-  background-color: blue;
-  opacity: 0.3;
+  background-color: #f4f2ec;
+}
+
+/* line 42, styles/portal.scss */
+.summary-panel {
+  padding: 13px;
+}
+/* line 45, styles/portal.scss */
+.summary-panel .critical {
+  color: #dc322f;
+}
+/* line 49, styles/portal.scss */
+.summary-panel .warning {
+  color: #b58900;
+}
+/* line 53, styles/portal.scss */
+.summary-panel .protected {
+  color: #2aa198;
+}
+
+/* line 58, styles/portal.scss */
+.summary-panel-item {
+  text-align: center;
+  background-color: #eee8d5;
+  padding: 13px;
+}
+/* line 63, styles/portal.scss */
+.summary-panel-item:first-child {
+  -webkit-border-top-left-radius: 10px;
+  border-top-left-radius: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+/* line 67, styles/portal.scss */
+.summary-panel-item:last-child {
+  -webkit-border-top-right-radius: 10px;
+  border-top-right-radius: 10px;
+  -webkit-border-bottom-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+/* line 71, styles/portal.scss */
+.summary-panel-item .label {
+  font-size: .6em;
+}
+/* line 75, styles/portal.scss */
+.summary-panel-item .count {
+  font-size: 1.8em;
+  font-weight: bold;
 }
