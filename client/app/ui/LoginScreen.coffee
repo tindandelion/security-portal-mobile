@@ -4,14 +4,18 @@ Ext.define 'Portal.ui.LoginScreen',
     fullscreen: true
     items: [
       {
-        xtype: 'textfield'
-        name: 'username'
-        label: 'User name'
-      },
-      {
-        xtype: 'passwordfield'
-        name: 'password'
-        label: 'Password'
+        xtype: 'fieldset'
+        items: [
+          {
+            xtype: 'textfield'
+            name: 'username'
+            placeHolder: 'User name'
+          },
+          {
+            xtype: 'passwordfield'
+            name: 'password'
+            placeHolder: 'Password'
+          }]
       },
       {
         xtype: 'button'
