@@ -8602,7 +8602,7 @@ html, body {
 
 /* line 134, sencha/resources/themes/stylesheets/sencha-touch/default/widgets/_form.scss */
 .x-form .x-scroll-container {
-  background-color: #eeeeee;
+  background-color: #fdf6e3;
 }
 /* line 137, sencha/resources/themes/stylesheets/sencha-touch/default/widgets/_form.scss */
 .x-form .x-scroll-container > .x-inner {
@@ -9416,53 +9416,53 @@ input[type="search"]::-webkit-search-cancel-button {
   border: 0.1em solid rgba(25, 133, 208, 0.9);
 }
 
-/* line 38, styles/portal.scss */
+/* line 39, styles/portal.scss */
 .placeholder {
   background-color: #f4f2ec;
 }
 
-/* line 42, styles/portal.scss */
+/* line 43, styles/portal.scss */
 .summary-panel {
   padding: 13px;
 }
-/* line 45, styles/portal.scss */
+/* line 46, styles/portal.scss */
 .summary-panel .critical {
   color: #dc322f;
 }
-/* line 49, styles/portal.scss */
+/* line 50, styles/portal.scss */
 .summary-panel .warning {
   color: #b58900;
 }
-/* line 53, styles/portal.scss */
+/* line 54, styles/portal.scss */
 .summary-panel .protected {
   color: #2aa198;
 }
 
-/* line 58, styles/portal.scss */
+/* line 59, styles/portal.scss */
 .summary-panel-item {
   text-align: center;
   background-color: #eee8d5;
   padding: 13px;
 }
-/* line 63, styles/portal.scss */
+/* line 64, styles/portal.scss */
 .summary-panel-item:first-child {
-  -webkit-border-top-left-radius: 10px;
-  border-top-left-radius: 10px;
-  -webkit-border-bottom-left-radius: 10px;
-  border-bottom-left-radius: 10px;
+  -webkit-border-top-left-radius: 0.4em;
+  border-top-left-radius: 0.4em;
+  -webkit-border-bottom-left-radius: 0.4em;
+  border-bottom-left-radius: 0.4em;
 }
-/* line 67, styles/portal.scss */
+/* line 68, styles/portal.scss */
 .summary-panel-item:last-child {
-  -webkit-border-top-right-radius: 10px;
-  border-top-right-radius: 10px;
-  -webkit-border-bottom-right-radius: 10px;
-  border-bottom-right-radius: 10px;
+  -webkit-border-top-right-radius: 0.4em;
+  border-top-right-radius: 0.4em;
+  -webkit-border-bottom-right-radius: 0.4em;
+  border-bottom-right-radius: 0.4em;
 }
-/* line 71, styles/portal.scss */
+/* line 72, styles/portal.scss */
 .summary-panel-item .label {
   font-size: .6em;
 }
-/* line 75, styles/portal.scss */
+/* line 76, styles/portal.scss */
 .summary-panel-item .count {
   font-size: 1.8em;
   font-weight: bold;
