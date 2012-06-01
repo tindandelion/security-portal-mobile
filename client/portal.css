@@ -6744,37 +6744,37 @@ audio {
 
 /* line 32, sencha/resources/themes/stylesheets/sencha-touch/default/_mixins.scss */
 .x-button.x-button-confirm, .x-toolbar .x-button.x-button-confirm, .x-button.x-button-confirm-round, .x-toolbar .x-button.x-button-confirm-round, .x-button.x-button-confirm-small, .x-toolbar .x-button.x-button-confirm-small {
-  border: 1px solid #263501;
-  border-top-color: #374e02;
+  border: 1px solid black;
+  border-top-color: #161901;
   color: white;
 }
 /* line 37, sencha/resources/themes/stylesheets/sencha-touch/default/_mixins.scss */
 .x-button.x-button-confirm.x-button-back:before, .x-button.x-button-confirm.x-button-forward:before, .x-toolbar .x-button.x-button-confirm.x-button-back:before, .x-toolbar .x-button.x-button-confirm.x-button-forward:before, .x-button.x-button-confirm-round.x-button-back:before, .x-button.x-button-confirm-round.x-button-forward:before, .x-toolbar .x-button.x-button-confirm-round.x-button-back:before, .x-toolbar .x-button.x-button-confirm-round.x-button-forward:before, .x-button.x-button-confirm-small.x-button-back:before, .x-button.x-button-confirm-small.x-button-forward:before, .x-toolbar .x-button.x-button-confirm-small.x-button-back:before, .x-toolbar .x-button.x-button-confirm-small.x-button-forward:before {
-  background: #263501;
+  background: black;
 }
 /* line 41, sencha/resources/themes/stylesheets/sencha-touch/default/_mixins.scss */
 .x-button.x-button-confirm, .x-button.x-button-confirm.x-button-back:after, .x-button.x-button-confirm.x-button-forward:after, .x-toolbar .x-button.x-button-confirm, .x-toolbar .x-button.x-button-confirm.x-button-back:after, .x-toolbar .x-button.x-button-confirm.x-button-forward:after, .x-button.x-button-confirm-round, .x-button.x-button-confirm-round.x-button-back:after, .x-button.x-button-confirm-round.x-button-forward:after, .x-toolbar .x-button.x-button-confirm-round, .x-toolbar .x-button.x-button-confirm-round.x-button-back:after, .x-toolbar .x-button.x-button-confirm-round.x-button-forward:after, .x-button.x-button-confirm-small, .x-button.x-button-confirm-small.x-button-back:after, .x-button.x-button-confirm-small.x-button-forward:after, .x-toolbar .x-button.x-button-confirm-small, .x-toolbar .x-button.x-button-confirm-small.x-button-back:after, .x-toolbar .x-button.x-button-confirm-small.x-button-forward:after {
   background-image: none;
-  background-color: #6c9804;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #a2e306), color-stop(3%, #7eb105), color-stop(100%, #5b7f03));
-  background-image: -webkit-linear-gradient(top, #a2e306, #7eb105 3%, #5b7f03);
-  background-image: linear-gradient(top, #a2e306, #7eb105 3%, #5b7f03);
+  background-color: #576303;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #98ae04), color-stop(3%, #6c7c03), color-stop(100%, #414b02));
+  background-image: -webkit-linear-gradient(top, #98ae04, #6c7c03 3%, #414b02);
+  background-image: linear-gradient(top, #98ae04, #6c7c03 3%, #414b02);
 }
 /* line 45, sencha/resources/themes/stylesheets/sencha-touch/default/_mixins.scss */
 .x-button.x-button-confirm .x-button-icon.x-icon-mask, .x-toolbar .x-button.x-button-confirm .x-button-icon.x-icon-mask, .x-button.x-button-confirm-round .x-button-icon.x-icon-mask, .x-toolbar .x-button.x-button-confirm-round .x-button-icon.x-icon-mask, .x-button.x-button-confirm-small .x-button-icon.x-icon-mask, .x-toolbar .x-button.x-button-confirm-small .x-button-icon.x-icon-mask {
   background-image: none;
   background-color: white;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(3%, #ffffff), color-stop(100%, #f7fee6));
-  background-image: -webkit-linear-gradient(top, #ffffff, #ffffff 3%, #f7fee6);
-  background-image: linear-gradient(top, #ffffff, #ffffff 3%, #f7fee6);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(3%, #ffffff), color-stop(100%, #fbfee6));
+  background-image: -webkit-linear-gradient(top, #ffffff, #ffffff 3%, #fbfee6);
+  background-image: linear-gradient(top, #ffffff, #ffffff 3%, #fbfee6);
 }
 /* line 50, sencha/resources/themes/stylesheets/sencha-touch/default/_mixins.scss */
 .x-button.x-button-confirm.x-button-pressing, .x-button.x-button-confirm.x-button-pressing:after, .x-button.x-button-confirm.x-button-pressed, .x-button.x-button-confirm.x-button-pressed:after, .x-button.x-button-confirm.x-button-active, .x-button.x-button-confirm.x-button-active:after, .x-toolbar .x-button.x-button-confirm.x-button-pressing, .x-toolbar .x-button.x-button-confirm.x-button-pressing:after, .x-toolbar .x-button.x-button-confirm.x-button-pressed, .x-toolbar .x-button.x-button-confirm.x-button-pressed:after, .x-toolbar .x-button.x-button-confirm.x-button-active, .x-toolbar .x-button.x-button-confirm.x-button-active:after, .x-button.x-button-confirm-round.x-button-pressing, .x-button.x-button-confirm-round.x-button-pressing:after, .x-button.x-button-confirm-round.x-button-pressed, .x-button.x-button-confirm-round.x-button-pressed:after, .x-button.x-button-confirm-round.x-button-active, .x-button.x-button-confirm-round.x-button-active:after, .x-toolbar .x-button.x-button-confirm-round.x-button-pressing, .x-toolbar .x-button.x-button-confirm-round.x-button-pressing:after, .x-toolbar .x-button.x-button-confirm-round.x-button-pressed, .x-toolbar .x-button.x-button-confirm-round.x-button-pressed:after, .x-toolbar .x-button.x-button-confirm-round.x-button-active, .x-toolbar .x-button.x-button-confirm-round.x-button-active:after, .x-button.x-button-confirm-small.x-button-pressing, .x-button.x-button-confirm-small.x-button-pressing:after, .x-button.x-button-confirm-small.x-button-pressed, .x-button.x-button-confirm-small.x-button-pressed:after, .x-button.x-button-confirm-small.x-button-active, .x-button.x-button-confirm-small.x-button-active:after, .x-toolbar .x-button.x-button-confirm-small.x-button-pressing, .x-toolbar .x-button.x-button-confirm-small.x-button-pressing:after, .x-toolbar .x-button.x-button-confirm-small.x-button-pressed, .x-toolbar .x-button.x-button-confirm-small.x-button-pressed:after, .x-toolbar .x-button.x-button-confirm-small.x-button-active, .x-toolbar .x-button.x-button-confirm-small.x-button-active:after {
   background-image: none;
-  background-color: #628904;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #3e5702), color-stop(10%, #507003), color-stop(65%, #628904), color-stop(100%, #648c04));
-  background-image: -webkit-linear-gradient(top, #3e5702, #507003 10%, #628904 65%, #648c04);
-  background-image: linear-gradient(top, #3e5702, #507003 10%, #628904 65%, #648c04);
+  background-color: #4a5502;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #1e2301), color-stop(10%, #343c02), color-stop(65%, #4a5502), color-stop(100%, #4c5702));
+  background-image: -webkit-linear-gradient(top, #1e2301, #343c02 10%, #4a5502 65%, #4c5702);
+  background-image: linear-gradient(top, #1e2301, #343c02 10%, #4a5502 65%, #4c5702);
 }
 
 /* line 32, sencha/resources/themes/stylesheets/sencha-touch/default/_mixins.scss */
@@ -9113,10 +9113,10 @@ html, body {
 /* line 146, sencha/resources/themes/stylesheets/sencha-touch/default/widgets/_form-sliders.scss */
 .x-toggle-on {
   background-image: none;
-  background-color: #92cf00;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #6e9c00), color-stop(10%, #80b500), color-stop(65%, #92cf00), color-stop(100%, #94d200));
-  background-image: -webkit-linear-gradient(top, #6e9c00, #80b500 10%, #92cf00 65%, #94d200);
-  background-image: linear-gradient(top, #6e9c00, #80b500 10%, #92cf00 65%, #94d200);
+  background-color: #859900;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #596600), color-stop(10%, #6f8000), color-stop(65%, #859900), color-stop(100%, #879c00));
+  background-image: -webkit-linear-gradient(top, #596600, #6f8000 10%, #859900 65%, #879c00);
+  background-image: linear-gradient(top, #596600, #6f8000 10%, #859900 65%, #879c00);
 }
 
 /* line 479, sencha/resources/themes/stylesheets/sencha-touch/default/widgets/_form.scss */
@@ -9416,53 +9416,53 @@ input[type="search"]::-webkit-search-cancel-button {
   border: 0.1em solid rgba(25, 133, 208, 0.9);
 }
 
-/* line 39, styles/portal.scss */
+/* line 40, styles/portal.scss */
 .placeholder {
   background-color: #f4f2ec;
 }
 
-/* line 43, styles/portal.scss */
+/* line 44, styles/portal.scss */
 .summary-panel {
   padding: 13px;
 }
-/* line 46, styles/portal.scss */
+/* line 47, styles/portal.scss */
 .summary-panel .critical {
   color: #dc322f;
 }
-/* line 50, styles/portal.scss */
+/* line 51, styles/portal.scss */
 .summary-panel .warning {
   color: #b58900;
 }
-/* line 54, styles/portal.scss */
+/* line 55, styles/portal.scss */
 .summary-panel .protected {
   color: #2aa198;
 }
 
-/* line 59, styles/portal.scss */
+/* line 60, styles/portal.scss */
 .summary-panel-item {
   text-align: center;
   background-color: #eee8d5;
   padding: 13px;
 }
-/* line 64, styles/portal.scss */
+/* line 65, styles/portal.scss */
 .summary-panel-item:first-child {
   -webkit-border-top-left-radius: 0.4em;
   border-top-left-radius: 0.4em;
   -webkit-border-bottom-left-radius: 0.4em;
   border-bottom-left-radius: 0.4em;
 }
-/* line 68, styles/portal.scss */
+/* line 69, styles/portal.scss */
 .summary-panel-item:last-child {
   -webkit-border-top-right-radius: 0.4em;
   border-top-right-radius: 0.4em;
   -webkit-border-bottom-right-radius: 0.4em;
   border-bottom-right-radius: 0.4em;
 }
-/* line 72, styles/portal.scss */
+/* line 73, styles/portal.scss */
 .summary-panel-item .label {
   font-size: .6em;
 }
-/* line 76, styles/portal.scss */
+/* line 77, styles/portal.scss */
 .summary-panel-item .count {
   font-size: 1.8em;
   font-weight: bold;

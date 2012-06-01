@@ -20,14 +20,12 @@ Ext.define 'Portal.ui.LoginScreen',
       {
         xtype: 'button'
         id: 'action'
-        text: 'Log in'
+        text: 'Log In'
         ui: 'confirm'
+        listeners: 
+          tap: -> @parent.fireLoginRequest()
       }]
   
-  initialize: -> 
-    @callParent(arguments)
-    @child('#action').setHandler => @fireLoginRequest()
-    
   fireLoginRequest: -> 
     credentials = @getValues()
     @fireEvent('loginRequest', credentials.username, credentials.password)    
