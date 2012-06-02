@@ -17,7 +17,7 @@ class window.LoginScreenDriver
     new DomButtonClicker(@getLoginButton()).click()
     
   getLoginButton: ->
-    @screen.query('button[text="Log In"]')[0]
+    @screen.query('#action')[0]
   
   setCredentials: (username, password) ->
     @screen.setValues({username, password})

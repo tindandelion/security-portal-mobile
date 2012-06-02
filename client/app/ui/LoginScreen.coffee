@@ -2,12 +2,16 @@ Ext.define 'Portal.ui.LoginScreen',
   extend: 'Ext.form.Panel'
   config:
     fullscreen: true
+    layout: 
+      type: 'vbox'
+      pack: 'center'
     items: [
       {
         xtype: 'fieldset'
         items: [
           {
             xtype: 'textfield'
+            autoCapitalize: false
             name: 'username'
             placeHolder: 'User name'
           },
