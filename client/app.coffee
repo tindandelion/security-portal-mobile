@@ -1,5 +1,12 @@
 Ext.application
   name: 'Portal'
+  
+  icon: 
+    114: 'images/app-icon-114.png'
+  glossOnIcon: false
+  startupImage: 
+    '640x920': 'images/startup-screen-640-920.png'
+  
   requires: [
     'Portal.ui.HomeScreen',
     'Portal.ui.LoginScreen'
