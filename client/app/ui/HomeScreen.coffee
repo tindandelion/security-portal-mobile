@@ -11,8 +11,7 @@ Ext.define 'Portal.ui.HomeScreen',
       }, 
       {
         xtype: 'label'
-        styleHtmlContent: true
-        cls: 'x-title'
+        cls: 'company-name-label'
         id: 'company-name'
         dock: 'top'
         html: 'Company Name'

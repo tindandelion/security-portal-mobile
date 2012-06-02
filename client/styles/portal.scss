@@ -15,6 +15,7 @@ $page-bg-color: $solarized-base-3;
 $toolbar-base-color: $solarized-base-00;
 $form-bg-color: $solarized-base-3;
 $confirm-color: $solarized-green;
+$text-color: $solarized-base-00;
 
 // Dimentions
 $default-padding: 13px;
@@ -39,6 +40,11 @@ $default-padding: 13px;
 
 .placeholder {
   background-color: desaturate($page-bg-color, 60%);
+}
+
+.company-name-label {
+  @extend .x-title;
+  color: $text-color;
 }
 
 .summary-panel {
