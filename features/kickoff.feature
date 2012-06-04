@@ -4,5 +4,5 @@ Feature: PSB Portal Mobile kick-off
 
   Scenario: Starting the application
     When a user starts the application
-    Then a web page with title "Security Portal Mobile" is shown
+    Then a web page with title "Secunda" is shown
 
