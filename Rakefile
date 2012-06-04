@@ -14,6 +14,7 @@ end
 PROJECT_DIR = Pathname.new(__FILE__).parent
 APP_DIR = PROJECT_DIR + "client"
 APP_URL = "http://localhost:4567"
+APP_PORT = 9393
 SPEC_DIR = PROJECT_DIR + "spec"
 
 ENV['APP_URL'] = APP_URL
@@ -65,10 +66,10 @@ task 'test' => ['spec', 'features']
 def open_browser
   require "watir-webdriver"
   browser = Watir::Browser.new(:chrome, :switches => ['--disable-web-security'])
-  browser.goto "http://localhost:9292"
+  browser.goto "http://localhost:#{APP_PORT}"
 end
 
 def start_server
-  sh "rackup"
+  sh "rackup -p #{APP_PORT}"
 end  
 
