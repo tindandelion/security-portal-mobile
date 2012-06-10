@@ -58,7 +58,7 @@ end
 task 'features' => 'features:all'
 
 desc 'Run unit specs'
-task 'spec' => ['compile', 'jasmine:ci']
+task 'spec' => ['compile:coffee', 'jasmine:ci']
 
 desc 'Run all tests'
 task 'test' => ['spec', 'features']

@@ -1,4 +1,6 @@
 Ext.define 'Portal.ui.PieCanvas', 
+  rotationAngle: Math.PI / 4
+  
   constructor: (config) -> 
     {@element, @colors} = config
     @canvas = @element.dom
@@ -15,7 +17,14 @@ Ext.define 'Portal.ui.PieCanvas',
     cy = @canvas.height / 2
     radius = Math.min(cx, cy) - 5
     context = @getContext(@colors[type])
-    context.sector(cx, cy, radius, start, end)
+    context.sector(cx, cy, radius, start - @rotationAngle, end - @rotationAngle)
+    
+  circle: (type) -> 
+    cx = @canvas.width / 2
+    cy = @canvas.height / 2
+    radius = Math.min(cx, cy) - 5
+    context = @getContext(@colors[type])
+    context.circle(cx, cy, radius)
     
   getContext: (fill) -> 
     context = @newContext(fill)
@@ -27,6 +36,10 @@ Ext.define 'Portal.ui.PieCanvas',
       @closePath()
       @fill()
       @stroke()
+    context.circle = (cx, cy, radius) ->
+      @arc(cx, cy, radius, 0, 2 * Math.PI)   
+      @fill()
+      
     context
   
   newContext: (fill) -> 
@@ -51,9 +64,9 @@ Ext.define 'Portal.ui.SummaryPie',
     @pieCanvas = Ext.create 'Portal.ui.PieCanvas', 
       element: @element.down('canvas')
       colors: 
-        'critical': '#2aa198'
+        'critical': '#dc322f'
         'warning': '#b58900'
-        'protected': '#dc322f'
+        'protected': '#2aa198'
         
     @on 'painted', @draw
       
