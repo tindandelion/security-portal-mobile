@@ -8,67 +8,58 @@ Ext.define 'Portal.ui.PieCanvas',
     @canvas.width = bounds.width * pixelRatio
     @canvas.height = bounds.height * pixelRatio
     
-  sector: (cx, cy, radius, start, end, color) -> 
-    context = @getContext()
-    center = @getCenter()
-    @drawSector(context, center.x, center.y, radius, start, end, color)
-  
-  getCenter: -> 
-    x: @canvas.width / 2
-    y: @canvas.height / 2
+  sector: (start, end, fill) -> 
+    cx = @canvas.width / 2
+    cy = @canvas.height / 2
+    radius = Math.min(cx, cy) - 5
+    context = @getContext(fill)
+    context.sector(cx, cy, radius, start, end)
     
-  getContext: -> 
+  getContext: (fill) -> 
+    context = @newContext(fill)
+    context.sector = (cx, cy, radius, start, end) -> 
+      @beginPath()
+      @moveTo(cx, cy)
+      @arc(cx, cy, radius, start, end)
+      @lineTo(cx, cy)
+      @closePath()
+      @fill()
+      @stroke()
+    context
+  
+  newContext: (fill) -> 
     context = @canvas.getContext('2d')
+    context.fillStyle = fill
     context.strokeStyle = '#eee8d5'
     context.lineWidth = 2
     context
-    
-  drawSector: (context, cx, cy, radius, start, end, color) -> 
-    rotation = Math.PI / 2
-
-    context.beginPath()
-    context.moveTo(cx, cy)
-    context.arc(cx, cy, radius, start - rotation, end - rotation)
-    context.lineTo(cx, cy)
-    context.closePath()
-    context.fillStyle = color
-    context.fill()
-    context.stroke()
-
-
 
 Ext.define 'Portal.ui.Pie', 
-  constructor: (config) -> 
-    @element = config.element
+  constructor: (element) -> 
+    @element = element
     @canvas = Ext.create('Portal.ui.PieCanvas', @element.dom)
+    @sectors = []
     this
     
-  getCanvas: -> @canvas.canvas
-  
   draw: (bounds) -> 
     @updateBounds(bounds)
     @drawPie()
     
   updateBounds: (bounds) -> 
-    pixelRatio = window.devicePixelRatio
     @element.setBox(bounds)
     @canvas.setBounds(bounds)
   
   drawPie: -> 
-    sectors = [
+    for sector in @sectors 
+      @canvas.sector(sector.start, sector.end, sector.fill)
+      
+  setData: (data) -> 
+    @sectors = [
       {start: 0; end: Math.PI / 3; fill: "#dc322f"},
       {start: Math.PI / 3; end: Math.PI ; fill: "#b58900"},
       {start: Math.PI; end: Math.PI * 2; fill: "#2aa198"}]
-      
-    @drawSector(sector) for sector in sectors
     
-  drawSector: (sector) -> 
-    {x:cx, y:cy} = @canvas.getCenter()
     
-    {start, end} = sector
-    radius = Math.min(cx, cy) - 5
-    
-    @canvas.sector(cx, cy, radius, start, end, sector.fill)
 
 Ext.define 'Portal.ui.SummaryPie',
   extend: 'Ext.Component'
@@ -78,13 +69,11 @@ Ext.define 'Portal.ui.SummaryPie',
     html: '<canvas></canvas>'
         
   initialize: -> 
-    @pie = Ext.create 'Portal.ui.Pie', 
-      element: @element.down('canvas')
-      
+    @canvas = @element.down('canvas')
+    @pie = Ext.create('Portal.ui.Pie', @canvas)
     @on 'painted', -> @pie.draw(@element.getBox())
   
-  setSummary: (value) ->
-    
-  
+  setSummary: (summary) ->
+    @pie.setData(summary)
     
   
