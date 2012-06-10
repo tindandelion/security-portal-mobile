@@ -71,10 +71,10 @@ Ext.define 'Portal.ui.SummaryPie',
     @on 'painted', @draw
       
   draw: -> 
-    @pieCanvas.setBox(@element.getBox())
-    @pieSlicer.draw(@pieCanvas)
+    @pieCanvas.setBox @element.getBox()
+    @pieSlicer.drawOn @pieCanvas
   
   setSummary: (summary) ->
-    @pieSlicer.setData(summary)
+    @pieSlicer.setData summary
     
   

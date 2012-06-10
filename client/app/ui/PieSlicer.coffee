@@ -1,14 +1,14 @@
 Ext.define 'Portal.ui.PieSlicer',
-  sectors: []
+  setData: (data) -> @data = data
+
+  drawOn: (canvas) -> 
+    itemsToDisplay = ({type, count} for type, count of @data when count > 0)
+    return if itemsToDisplay.length == 0
     
-  draw: (canvas) -> 
-    displayed = ({type, count} for type, count of @data when count > 0)
-    return if displayed.length == 0
-    
-    if displayed.length == 1
-      @drawSingleSector(canvas, displayed[0].type)
+    if itemsToDisplay.length == 1
+      @drawSingleSector(canvas, itemsToDisplay[0].type)
     else
-      sectors = @calculateSectors(displayed)
+      sectors = @calculateSectors(itemsToDisplay)
       @drawMultiSectors(canvas, sectors)
   
   drawSingleSector: (canvas, type) -> 
@@ -16,18 +16,16 @@ Ext.define 'Portal.ui.PieSlicer',
     
   calculateSectors: (items) -> 
     total = @totalOf(items)
-    @respectiveAnglesOf(items, total)
+    for item in items
+      angle = 2 * Math.PI * item.count / total
+      {type: item.type, angle}
     
   totalOf: (values) -> 
     total = 0
-    total += value.count for value in values 
+    for value in values 
+      total += value.count 
     total
   
-  respectiveAnglesOf: (values, total) -> 
-    for value in values
-      angle = 2 * Math.PI * value.count / total
-      {type: value.type, angle}
-    
   drawMultiSectors: (canvas, sectors) ->
     startAngle = 0
     for sector in sectors 
@@ -35,4 +33,3 @@ Ext.define 'Portal.ui.PieSlicer',
       canvas.sector(startAngle, endAngle, sector.type)
       startAngle = endAngle
       
-  setData: (data) -> @data = data

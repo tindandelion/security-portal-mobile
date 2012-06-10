@@ -13,7 +13,7 @@ describe 'PieSlicer', ->
       critical: 0
       warning: 0
       protected: 10
-    @slicer.draw(@canvas)
+    @slicer.drawOn @canvas
     expect(@canvas.circle).toHaveBeenCalledWith('protected')
     
   it 'draws a circle if all computers are critical', ->
@@ -21,32 +21,32 @@ describe 'PieSlicer', ->
       critical: 10
       warning: 0
       protected: 0
-    @slicer.draw(@canvas)
+    @slicer.drawOn @canvas
     expect(@canvas.circle).toHaveBeenCalledWith('critical')
     
   it 'draws nothing if no computers are found', ->
-    @slicer.setData 
+    @slicer.setData  
       critical: 0
       warning: 0
       protected: 0
-    @slicer.draw(@canvas)
+    @slicer.drawOn @canvas
     expect(@canvas.circle).not.toHaveBeenCalled()
     
   it 'skips items with zero counts', ->
-    @slicer.setData
+    @slicer.setData 
       critical: 1
       warning: 0
       protected: 1
-    @slicer.draw(@canvas)
+    @slicer.drawOn @canvas
     expect(@canvas.sector).toHaveBeenCalledWith(0, Math.PI, 'critical')
     expect(@canvas.sector).toHaveBeenCalledWith(Math.PI, Math.PI * 2, 'protected')
     
   it 'calculates respective angles for all types of data', ->
-    @slicer.setData
+    @slicer.setData 
       critical: 1
       warning: 1
       protected: 2
-    @slicer.draw(@canvas)
+    @slicer.drawOn @canvas
     expect(@canvas.sector).toHaveBeenCalledWith(0, Math.PI / 2, 'critical')
     expect(@canvas.sector).toHaveBeenCalledWith(Math.PI / 2, Math.PI, 'warning')
     expect(@canvas.sector).toHaveBeenCalledWith(Math.PI, Math.PI * 2, 'protected')
