@@ -36,24 +36,12 @@ Ext.define 'Portal.ui.PieCanvas',
     context.lineWidth = 2
     context
 
-Ext.define 'Portal.ui.PieSlicer',
-  sectors: []
-    
-  draw: (canvas) -> 
-    for sector in @sectors 
-      canvas.sector(sector.start, sector.end, sector.type)
-      
-  setData: (data) -> 
-    @sectors = [
-      {start: 0; end: Math.PI / 3; type: 'critical'},
-      {start: Math.PI / 3; end: Math.PI; type: 'warning'},
-      {start: Math.PI; end: Math.PI * 2; type: 'protected'}]
-    
-    
-
 Ext.define 'Portal.ui.SummaryPie',
   extend: 'Ext.Component'
   xtype: 'summarypie'
+  requires: [
+    'Portal.ui.PieCanvas', 
+    'Portal.ui.PieSlicer']
   config: 
     baseCls: 'summary-pie'
     html: '<canvas></canvas>'
