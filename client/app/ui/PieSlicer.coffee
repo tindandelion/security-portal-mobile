@@ -1,15 +1,17 @@
 Ext.define 'Portal.ui.PieSlicer',
-  setData: (data) -> @data = data
+  sectors: []
+  
+  setData: (data) -> 
+    toDisplay = ({type, count} for type, count of data when count > 0)
+    @sectors = @calculateSectors(toDisplay)
 
   drawOn: (canvas) -> 
-    itemsToDisplay = ({type, count} for type, count of @data when count > 0)
-    return if itemsToDisplay.length == 0
+    return if @sectors.length == 0
     
-    if itemsToDisplay.length == 1
-      @drawSingleSector(canvas, itemsToDisplay[0].type)
+    if @sectors.length == 1
+      @drawSingleSector(canvas, @sectors[0].type)
     else
-      sectors = @calculateSectors(itemsToDisplay)
-      @drawMultiSectors(canvas, sectors)
+      @drawMultiSectors(canvas, @sectors)
   
   drawSingleSector: (canvas, type) -> 
     canvas.circle(type)

@@ -5,8 +5,17 @@ describe 'PieSlicer', ->
     @slicer = Ext.create('Portal.ui.PieSlicer')
     @canvas = jasmine.createSpyObj('canvas', ['circle', 'sector'])
      
-  it 'gets created', -> 
-    expect(@slicer).toBeDefined()
+  it 'draws nothing when data is not supplied', -> 
+    @slicer.drawOn @canvas
+    expect(@canvas.circle).not.toHaveBeenCalled()
+    
+  it 'draws nothing if no computers are found', ->
+    @slicer.setData  
+      critical: 0
+      warning: 0
+      protected: 0
+    @slicer.drawOn @canvas
+    expect(@canvas.circle).not.toHaveBeenCalled()
     
   it 'draws a circle if all computers are protected', -> 
     @slicer.setData 
@@ -23,14 +32,6 @@ describe 'PieSlicer', ->
       protected: 0
     @slicer.drawOn @canvas
     expect(@canvas.circle).toHaveBeenCalledWith('critical')
-    
-  it 'draws nothing if no computers are found', ->
-    @slicer.setData  
-      critical: 0
-      warning: 0
-      protected: 0
-    @slicer.drawOn @canvas
-    expect(@canvas.circle).not.toHaveBeenCalled()
     
   it 'skips items with zero counts', ->
     @slicer.setData 
