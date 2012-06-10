@@ -42,14 +42,8 @@ Ext.define 'Portal.ui.Pie',
     this
     
   draw: (bounds) -> 
-    @updateBounds(bounds)
-    @drawPie()
-    
-  updateBounds: (bounds) -> 
     @element.setBox(bounds)
     @canvas.setBounds(bounds)
-  
-  drawPie: -> 
     for sector in @sectors 
       @canvas.sector(sector.start, sector.end, sector.fill)
       
