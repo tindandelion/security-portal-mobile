@@ -1,18 +1,20 @@
 Ext.define 'Portal.ui.PieCanvas', 
-  constructor: (canvas) -> 
-    @canvas = canvas
+  constructor: (config) -> 
+    {@element, @colors} = config
+    @canvas = @element.dom
     this
     
-  setBounds: (bounds) -> 
+  setBox: (box) -> 
+    @element.setBox(box)
     pixelRatio = window.devicePixelRatio
-    @canvas.width = bounds.width * pixelRatio
-    @canvas.height = bounds.height * pixelRatio
+    @canvas.width = box.width * pixelRatio
+    @canvas.height = box.height * pixelRatio
     
-  sector: (start, end, fill) -> 
+  sector: (start, end, type) -> 
     cx = @canvas.width / 2
     cy = @canvas.height / 2
     radius = Math.min(cx, cy) - 5
-    context = @getContext(fill)
+    context = @getContext(@colors[type])
     context.sector(cx, cy, radius, start, end)
     
   getContext: (fill) -> 
@@ -34,24 +36,18 @@ Ext.define 'Portal.ui.PieCanvas',
     context.lineWidth = 2
     context
 
-Ext.define 'Portal.ui.Pie', 
-  constructor: (element) -> 
-    @element = element
-    @canvas = Ext.create('Portal.ui.PieCanvas', @element.dom)
-    @sectors = []
-    this
+Ext.define 'Portal.ui.PieSlicer',
+  sectors: []
     
-  draw: (bounds) -> 
-    @element.setBox(bounds)
-    @canvas.setBounds(bounds)
+  draw: (canvas) -> 
     for sector in @sectors 
-      @canvas.sector(sector.start, sector.end, sector.fill)
+      canvas.sector(sector.start, sector.end, sector.type)
       
   setData: (data) -> 
     @sectors = [
-      {start: 0; end: Math.PI / 3; fill: "#dc322f"},
-      {start: Math.PI / 3; end: Math.PI ; fill: "#b58900"},
-      {start: Math.PI; end: Math.PI * 2; fill: "#2aa198"}]
+      {start: 0; end: Math.PI / 3; type: 'critical'},
+      {start: Math.PI / 3; end: Math.PI; type: 'warning'},
+      {start: Math.PI; end: Math.PI * 2; type: 'protected'}]
     
     
 
@@ -63,11 +59,21 @@ Ext.define 'Portal.ui.SummaryPie',
     html: '<canvas></canvas>'
         
   initialize: -> 
-    @canvas = @element.down('canvas')
-    @pie = Ext.create('Portal.ui.Pie', @canvas)
-    @on 'painted', -> @pie.draw(@element.getBox())
+    @pieSlicer = Ext.create('Portal.ui.PieSlicer')
+    @pieCanvas = Ext.create 'Portal.ui.PieCanvas', 
+      element: @element.down('canvas')
+      colors: 
+        'critical': '#2aa198'
+        'warning': '#b58900'
+        'protected': '#dc322f'
+        
+    @on 'painted', @draw
+      
+  draw: -> 
+    @pieCanvas.setBox(@element.getBox())
+    @pieSlicer.draw(@pieCanvas)
   
   setSummary: (summary) ->
-    @pie.setData(summary)
+    @pieSlicer.setData(summary)
     
   
