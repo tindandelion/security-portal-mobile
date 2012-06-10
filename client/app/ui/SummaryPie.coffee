@@ -10,7 +10,8 @@ Ext.define 'Portal.ui.PieCanvas',
     
   sector: (cx, cy, radius, start, end, color) -> 
     context = @getContext()
-    @drawSector(context, cx, cy, radius, start, end, color)
+    center = @getCenter()
+    @drawSector(context, center.x, center.y, radius, start, end, color)
   
   getCenter: -> 
     x: @canvas.width / 2
