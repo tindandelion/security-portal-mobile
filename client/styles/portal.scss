@@ -48,7 +48,7 @@ $default-padding: 13px;
 }
 
 .summary-panel {
-  padding: $default-padding;
+  margin: $default-padding;
   
   .critical {
     color: $solarized-red;
@@ -61,6 +61,10 @@ $default-padding: 13px;
   .protected {
     color: $solarized-cyan;
   }
+}
+
+.summary-pie {  
+  margin: $default-padding;
 }
 
 .summary-panel-item {

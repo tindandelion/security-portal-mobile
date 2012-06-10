@@ -1,6 +1,6 @@
 Ext.define 'Portal.ui.HomeScreen',
   extend: 'Ext.Container'
-  requires: ['Portal.ui.Placeholder', 'Portal.ui.SummaryPanel']
+  requires: ['Portal.ui.SummaryPie', 'Portal.ui.SummaryPanel']
   config:
     fullscreen: true
     layout: 'vbox'
@@ -17,7 +17,8 @@ Ext.define 'Portal.ui.HomeScreen',
         html: 'Company Name'
       },
       {
-        xtype: 'placeholder'
+        xtype: 'summarypie'
+        id: 'summary-pie'
         flex: 1
       },
       {
@@ -29,3 +30,4 @@ Ext.define 'Portal.ui.HomeScreen',
   setSummary: (context) ->
     @child('#company-name').setHtml(context.company_name)
     @child('#summary-panel').setSummary(context.summary)
+    @child('#summary-pie').setSummary(context.summary)
