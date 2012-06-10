@@ -1,63 +1,73 @@
-Ext.define 'Portal.ui.Pie', 
-    
-  constructor: (config) -> 
-    @element = config.element
+Ext.define 'Portal.ui.PieCanvas', 
+  constructor: (canvas) -> 
+    @canvas = canvas
     this
-  
-  draw: (box) -> 
+    
+  setBounds: (bounds) -> 
     pixelRatio = window.devicePixelRatio
-    canvas = @element.dom 
+    @canvas.width = bounds.width * pixelRatio
+    @canvas.height = bounds.height * pixelRatio
     
-    @updateBox(box)
-    canvas.width = box.width * pixelRatio
-    canvas.height = box.height * pixelRatio
-    context = canvas.getContext("2d") 
-    @drawPie(context, canvas.width, canvas.height)
-    
-  updateBox: (box) -> @element.setBox(box)
+  sector: (cx, cy, radius, start, end, color) -> 
+    context = @getContext()
+    @drawSector(context, cx, cy, radius, start, end, color)
   
-  drawPie: (context, width, height) -> 
-    @drawSector context,
-      center: 
-        x: width / 2
-        y: height / 2
-      angles: 
-        start: 0
-        end: Math.PI / 3
-      fill: "#dc322f"
-    @drawSector context,
-      center: 
-        x: width / 2
-        y: height / 2
-      angles: 
-        start: Math.PI / 3
-        end: Math.PI
-      fill: "#b58900"
-    @drawSector context,
-      center: 
-        x: width / 2
-        y: height / 2
-      angles: 
-        start: Math.PI
-        end: Math.PI * 2
-      fill: "#2aa198"
+  getCenter: -> 
+    x: @canvas.width / 2
+    y: @canvas.height / 2
     
-  drawSector: (context, sector) -> 
+  getContext: -> 
+    context = @canvas.getContext('2d')
+    context.strokeStyle = '#eee8d5'
+    context.lineWidth = 2
+    context
+    
+  drawSector: (context, cx, cy, radius, start, end, color) -> 
     rotation = Math.PI / 2
-    {x:cx, y:cy} = sector.center
-    {start, end} = sector.angles
-    radius = Math.min(cx, cy) - 5
-    
+
     context.beginPath()
     context.moveTo(cx, cy)
     context.arc(cx, cy, radius, start - rotation, end - rotation)
     context.lineTo(cx, cy)
     context.closePath()
-    context.fillStyle = sector.fill
-    context.strokeStyle = '#eee8d5'
-    context.lineWidth = 2
+    context.fillStyle = color
     context.fill()
     context.stroke()
+
+
+
+Ext.define 'Portal.ui.Pie', 
+  constructor: (config) -> 
+    @element = config.element
+    @canvas = Ext.create('Portal.ui.PieCanvas', @element.dom)
+    this
+    
+  getCanvas: -> @canvas.canvas
+  
+  draw: (bounds) -> 
+    @updateBounds(bounds)
+    @drawPie()
+    
+  updateBounds: (bounds) -> 
+    pixelRatio = window.devicePixelRatio
+    @element.setBox(bounds)
+    @canvas.setBounds(bounds)
+  
+  drawPie: -> 
+    sectors = [
+      {start: 0; end: Math.PI / 3; fill: "#dc322f"},
+      {start: Math.PI / 3; end: Math.PI ; fill: "#b58900"},
+      {start: Math.PI; end: Math.PI * 2; fill: "#2aa198"}]
+      
+    @drawSector(sector) for sector in sectors
+    
+  drawSector: (sector) -> 
+    {x:cx, y:cy} = @canvas.getCenter()
+    
+    {start, end} = sector
+    radius = Math.min(cx, cy) - 5
+    
+    @canvas.sector(cx, cy, radius, start, end, sector.fill)
 
 Ext.define 'Portal.ui.SummaryPie',
   extend: 'Ext.Component'
