@@ -32,7 +32,7 @@ describe 'PieSlicer', ->
     @slicer.draw(@canvas)
     expect(@canvas.circle).not.toHaveBeenCalled()
     
-  it 'draws 2 sectors if there are critical and protected computers', ->
+  it 'skips items with zero counts', ->
     @slicer.setData
       critical: 1
       warning: 0
@@ -41,7 +41,7 @@ describe 'PieSlicer', ->
     expect(@canvas.sector).toHaveBeenCalledWith(0, Math.PI, 'critical')
     expect(@canvas.sector).toHaveBeenCalledWith(Math.PI, Math.PI * 2, 'protected')
     
-  it 'draws 3 sectors if there are all types of data', ->
+  it 'calculates respective angles for all types of data', ->
     @slicer.setData
       critical: 1
       warning: 1
