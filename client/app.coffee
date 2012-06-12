@@ -9,8 +9,7 @@ Ext.application
   
   requires: [
     'Portal.ui.HomeScreen',
-    'Portal.ui.LoginScreen'
-    ]
+    'Portal.ui.LoginScreen']
   launch: -> 
     validateUser = (params) ->
       Ext.Ajax.request
