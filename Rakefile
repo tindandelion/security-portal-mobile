@@ -20,13 +20,14 @@ SPEC_DIR = PROJECT_DIR + "spec"
 ENV['APP_URL'] = APP_URL
 ENV['JASMINE_BROWSER'] = 'chrome'
 
-CLEAN.include (APP_DIR + "app" + "**/*.js").to_s
 CLEAN.include (SPEC_DIR + "**/*.js").to_s
 
 namespace 'compile' do 
-  desc 'Compile CoffeeScript files'
-  task 'coffee' do
+  task 'app' do
     sh "coffee --compile #{APP_DIR}"
+  end
+  
+  task 'spec' do 
     sh "coffee --compile #{SPEC_DIR}"
   end
   
@@ -35,22 +36,20 @@ namespace 'compile' do
   end
 end  
 
-task 'compile' => ['compile:coffee', 'compile:css']
-
 desc "Run Sinatra server"
 task :server do 
   start_server
 end
 
 desc "Run application"
-task 'app' => 'compile' do
+task 'app' do
   open_browser
   start_server
 end
 
 namespace 'features' do 
-  Cucumber::Rake::Task.new('all' => 'compile')
-  Cucumber::Rake::Task.new('wip' => 'compile') do |t|
+  Cucumber::Rake::Task.new('all')
+  Cucumber::Rake::Task.new('wip') do |t|
     t.cucumber_opts = ['--tags', '@wip']
   end
 end
@@ -58,7 +57,7 @@ end
 task 'features' => 'features:all'
 
 desc 'Run unit specs'
-task 'spec' => ['compile:coffee', 'jasmine:ci']
+task 'spec' => ['compile:spec', 'jasmine:ci']
 
 desc 'Run all tests'
 task 'test' => ['spec', 'features']
