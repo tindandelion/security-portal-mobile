@@ -3,15 +3,23 @@ require "json"
 require "pathname"
 
 require_relative "account_management"
+require_relative 'sencha_framework'
 
 class BackendServer < Sinatra::Base
-  extend AccountManagement 
+  extend AccountManagement
+  include SenchaFramework 
   
   set :public_folder, Pathname(__FILE__).dirname.parent + "client"
   
   get '/' do 
     redirect "/index.html"
   end
+  
+  get '/sencha-touch.js' do 
+    content_type 'application/javascript'
+    load_sencha_framework
+  end
+    
   
   post "/validate" do 
     credentials = JSON.parse(request.body.read)
