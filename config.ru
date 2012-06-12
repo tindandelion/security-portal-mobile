@@ -12,4 +12,5 @@ BackendServer.with_company "Demo Company" do |company|
   }
 end
 
+use Rack::Deflater
 run BackendServer
