@@ -9444,35 +9444,30 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 /* line 66, styles/portal.scss */
-.summary-pie {
-  margin: 13px;
-}
-
-/* line 70, styles/portal.scss */
 .summary-panel-item {
   text-align: center;
   background-color: #eee8d5;
   padding: 13px;
 }
-/* line 75, styles/portal.scss */
+/* line 71, styles/portal.scss */
 .summary-panel-item:first-child {
   -webkit-border-top-left-radius: 0.4em;
   border-top-left-radius: 0.4em;
   -webkit-border-bottom-left-radius: 0.4em;
   border-bottom-left-radius: 0.4em;
 }
-/* line 79, styles/portal.scss */
+/* line 75, styles/portal.scss */
 .summary-panel-item:last-child {
   -webkit-border-top-right-radius: 0.4em;
   border-top-right-radius: 0.4em;
   -webkit-border-bottom-right-radius: 0.4em;
   border-bottom-right-radius: 0.4em;
 }
-/* line 83, styles/portal.scss */
+/* line 79, styles/portal.scss */
 .summary-panel-item .label {
   font-size: .6em;
 }
-/* line 87, styles/portal.scss */
+/* line 83, styles/portal.scss */
 .summary-panel-item .count {
   font-size: 1.8em;
   font-weight: bold;
