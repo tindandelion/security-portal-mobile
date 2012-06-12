@@ -10,6 +10,7 @@ group :development do
   gem "cucumber"
   gem "watir-webdriver"
   gem "jasmine"
+  gem "jasmine-headless-webkit"
   gem "rspec-expectations"
   gem "guard"
   gem "guard-coffeescript"

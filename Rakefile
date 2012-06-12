@@ -1,15 +1,7 @@
 require "rake/clean"
 require "cucumber/rake/task"
 require "pathname"
-
-begin
-  require 'jasmine'
-  load 'jasmine/tasks/jasmine.rake'
-rescue LoadError
-  task :jasmine do
-    abort "Jasmine is not available. In order to run jasmine, you must: (sudo) gem install jasmine"
-  end
-end
+require "jasmine-headless-webkit"
 
 PROJECT_DIR = Pathname.new(__FILE__).parent
 APP_DIR = PROJECT_DIR + "client"
@@ -18,7 +10,6 @@ APP_PORT = 9393
 SPEC_DIR = PROJECT_DIR + "spec"
 
 ENV['APP_URL'] = APP_URL
-ENV['JASMINE_BROWSER'] = 'chrome'
 
 CLEAN.include (SPEC_DIR + "**/*.js").to_s
 
@@ -57,7 +48,10 @@ end
 task 'features' => 'features:all'
 
 desc 'Run unit specs'
-task 'spec' => ['jasmine:ci']
+Jasmine::Headless::Task.new('spec') do |t|
+  t.colors = true
+  t.keep_on_error = true
+end
 
 desc 'Run all tests'
 task 'test' => ['spec', 'features']
