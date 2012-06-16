@@ -1,3 +1,5 @@
+FIELD_WIDTH = '15em'
+
 Ext.define 'Portal.ui.LoginScreen', 
   extend: 'Ext.form.Panel'
   config:
@@ -5,9 +7,11 @@ Ext.define 'Portal.ui.LoginScreen',
     layout: 
       type: 'vbox'
       pack: 'center'
+      align: 'center'
     items: [
       {
         xtype: 'fieldset'
+        width: FIELD_WIDTH
         items: [
           {
             xtype: 'textfield'
@@ -23,6 +27,7 @@ Ext.define 'Portal.ui.LoginScreen',
       },
       {
         xtype: 'button'
+        width: FIELD_WIDTH
         id: 'action'
         text: 'Log In'
         ui: 'confirm'

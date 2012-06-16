@@ -1,4 +1,7 @@
 (function() {
+  var FIELD_WIDTH;
+
+  FIELD_WIDTH = '15em';
 
   Ext.define('Portal.ui.LoginScreen', {
     extend: 'Ext.form.Panel',
@@ -6,11 +9,13 @@
       fullscreen: true,
       layout: {
         type: 'vbox',
-        pack: 'center'
+        pack: 'center',
+        align: 'center'
       },
       items: [
         {
           xtype: 'fieldset',
+          width: FIELD_WIDTH,
           items: [
             {
               xtype: 'textfield',
@@ -25,6 +30,7 @@
           ]
         }, {
           xtype: 'button',
+          width: FIELD_WIDTH,
           id: 'action',
           text: 'Log In',
           ui: 'confirm',
