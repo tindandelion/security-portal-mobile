@@ -64,7 +64,7 @@
     requires: ['Portal.ui.PieCanvas', 'Portal.ui.PieSlicer'],
     config: {
       baseCls: 'summary-pie',
-      html: '<canvas></canvas>'
+      html: '<canvas style="position: absolute;"></canvas>'
     },
     initialize: function() {
       this.pieSlicer = Ext.create('Portal.ui.PieSlicer');
@@ -76,7 +76,10 @@
           'protected': '#2aa198'
         }
       });
-      return this.on('painted', this.draw);
+      return this.on({
+        'painted': this.draw,
+        'resize': this.draw
+      });
     },
     draw: function() {
       this.pieCanvas.setBox(this.element.getBox());

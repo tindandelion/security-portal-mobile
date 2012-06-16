@@ -57,7 +57,7 @@ Ext.define 'Portal.ui.SummaryPie',
     'Portal.ui.PieSlicer']
   config: 
     baseCls: 'summary-pie'
-    html: '<canvas></canvas>'
+    html: '<canvas style="position: absolute;"></canvas>'
         
   initialize: -> 
     @pieSlicer = Ext.create('Portal.ui.PieSlicer')
@@ -68,7 +68,9 @@ Ext.define 'Portal.ui.SummaryPie',
         'warning': '#b58900'
         'protected': '#2aa198'
         
-    @on 'painted', @draw
+    @on 
+      'painted': @draw
+      'resize': @draw
       
   draw: -> 
     @pieCanvas.setBox @element.getBox()

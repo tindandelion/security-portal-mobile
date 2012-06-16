@@ -2,6 +2,8 @@ require "rake/clean"
 require "cucumber/rake/task"
 require "pathname"
 require "jasmine-headless-webkit"
+require 'jasmine'
+load 'jasmine/tasks/jasmine.rake'
 
 PROJECT_DIR = Pathname.new(__FILE__).parent
 APP_DIR = PROJECT_DIR + "client"
