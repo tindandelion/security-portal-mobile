@@ -27,10 +27,20 @@
         }
       ]
     },
+    initialize: function() {
+      var _this = this;
+      this.callParent(arguments);
+      return Ext.Viewport.on('orientationchange', function(viewport, orientation) {
+        return _this.changeOrientation(orientation);
+      });
+    },
     setSummary: function(context) {
       this.child('#company-name').setHtml(context.company_name);
       this.child('#summary-panel').setSummary(context.summary);
       return this.child('#summary-pie').setSummary(context.summary);
+    },
+    changeOrientation: function(orientation) {
+      return console.log("Changed orientation to: " + orientation);
     }
   });
 

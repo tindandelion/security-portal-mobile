@@ -27,7 +27,16 @@ Ext.define 'Portal.ui.HomeScreen',
         dock: 'bottom'
       }]
       
+  initialize: -> 
+    @callParent(arguments)
+    Ext.Viewport.on 'orientationchange', (viewport, orientation) =>
+      @changeOrientation(orientation)
+      
   setSummary: (context) ->
     @child('#company-name').setHtml(context.company_name)
     @child('#summary-panel').setSummary(context.summary)
     @child('#summary-pie').setSummary(context.summary)
+    
+  changeOrientation: (orientation) ->
+    console.log "Changed orientation to: " + orientation 
+    
