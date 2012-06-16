@@ -1,27 +1,27 @@
-Ext.define 'Portal.ui.SummaryPanel',
+Ext.define 'Portal.ui.SummaryNumbers',
   extend: 'Ext.Container'
-  requires: ['Portal.ui.SummaryPanelItem']
-  xtype: 'summarypanel'
+  requires: ['Portal.ui.SummaryEntry']
+  xtype: 'summarynumbers'
   config: 
     layout: 'hbox'
     cls: 'summary-panel'
     items: [
       {
-        xtype: 'summarypanelitem'
+        xtype: 'summaryentry'
         cls: 'critical'
         label: 'CRITICAL'
         itemId: 'critical'
         flex: 1
       },
       {
-        xtype: 'summarypanelitem',
+        xtype: 'summaryentry',
         cls: 'warning'
         label: 'WARNING'
         itemId: 'warning'
         flex: 1
       },
       {
-        xtype: 'summarypanelitem',
+        xtype: 'summaryentry',
         cls: 'protected'
         label: 'PROTECTED'
         itemId: 'protected'
@@ -29,8 +29,8 @@ Ext.define 'Portal.ui.SummaryPanel',
       }]
       
   setSummary: (summary) -> 
-    for item in @summaryPanelItems()
+    for item in @summaryEntries()
       item.setCount(summary[item.getItemId()])
 
-  summaryPanelItems: -> 
+  summaryEntries: -> 
     @getItems().items

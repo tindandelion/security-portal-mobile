@@ -1,7 +1,6 @@
-Ext.define 'Portal.ui.SummaryPanelItem',
+Ext.define 'Portal.ui.SummaryEntry',
   extend: 'Ext.Panel'
-  xtype: 'summarypanelitem'
-  requires: ['Portal.ui.Placeholder']
+  xtype: 'summaryentry'
   config:
     label: '' 
     count: 0
@@ -11,7 +10,7 @@ Ext.define 'Portal.ui.SummaryPanelItem',
       { xtype: 'label', cls: 'label', itemId: 'label' }, 
       { xtype: 'label', cls: 'count', itemId: 'count' }]
       
-  updateLabel: (newValue, oldValue) -> 
+  updateLabel: (newValue) -> 
     @child('#label').setHtml(newValue)
   
   updateCount: (newValue) -> 

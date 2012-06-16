@@ -1,4 +1,4 @@
-Ext.require ['Portal.ui.SummaryPanelItem']
+Ext.require ['Portal.ui.SummaryEntry']
 
 ChildMatchers = 
   toHaveChild: (id, params) ->
@@ -9,7 +9,7 @@ ChildMatchers =
 describe "SummaryPanelItem", ->
   beforeEach -> 
     @addMatchers(ChildMatchers)
-    @panel = Ext.create('Portal.ui.SummaryPanelItem') 
+    @panel = Ext.create('Portal.ui.SummaryEntry') 
     
   afterEach -> 
     @panel.destroy()

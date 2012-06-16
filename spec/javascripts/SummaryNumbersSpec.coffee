@@ -1,14 +1,14 @@
-Ext.require ['Portal.ui.SummaryPanel']
+Ext.require ['Portal.ui.SummaryNumbers']
 
-describe 'SummaryPanel', ->
+describe 'SummaryNumbers', ->
   beforeEach ->
-    @panel = Ext.create('Portal.ui.SummaryPanel')
+    @panel = Ext.create('Portal.ui.SummaryNumbers')
     
   afterEach ->
     @panel.destroy()
     
   it "gets created with correct number of items", ->
-    expect(@panel.summaryPanelItems().length).toEqual(3)
+    expect(@panel.summaryEntries().length).toEqual(3)
     
   it "sets count values to corresponding items", ->
     summary = 

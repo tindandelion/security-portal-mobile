@@ -1,6 +1,6 @@
 Ext.define 'Portal.ui.HomeScreen',
   extend: 'Ext.Container'
-  requires: ['Portal.ui.SummaryPie', 'Portal.ui.SummaryPanel']
+  requires: ['Portal.ui.SummaryPie', 'Portal.ui.SummaryNumbers']
   config:
     fullscreen: true
     layout: 'vbox'
@@ -22,7 +22,7 @@ Ext.define 'Portal.ui.HomeScreen',
         flex: 1
       },
       {
-        xtype: 'summarypanel'
+        xtype: 'summarynumbers'
         id: 'summary-panel'
         dock: 'bottom'
       }]

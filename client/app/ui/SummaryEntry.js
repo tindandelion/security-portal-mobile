@@ -1,9 +1,8 @@
 (function() {
 
-  Ext.define('Portal.ui.SummaryPanelItem', {
+  Ext.define('Portal.ui.SummaryEntry', {
     extend: 'Ext.Panel',
-    xtype: 'summarypanelitem',
-    requires: ['Portal.ui.Placeholder'],
+    xtype: 'summaryentry',
     config: {
       label: '',
       count: 0,
@@ -20,7 +19,7 @@
         }
       ]
     },
-    updateLabel: function(newValue, oldValue) {
+    updateLabel: function(newValue) {
       return this.child('#label').setHtml(newValue);
     },
     updateCount: function(newValue) {
