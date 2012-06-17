@@ -7,12 +7,12 @@
       this.canvas = this.element.dom;
       return this;
     },
-    setBox: function(box) {
+    setSize: function(size) {
       var pixelRatio;
-      this.element.setBox(box);
+      this.element.setSize(size);
       pixelRatio = window.devicePixelRatio;
-      this.canvas.width = box.width * pixelRatio;
-      return this.canvas.height = box.height * pixelRatio;
+      this.canvas.width = size.width * pixelRatio;
+      return this.canvas.height = size.height * pixelRatio;
     },
     sector: function(start, end, type) {
       var context, cx, cy, radius;
@@ -82,7 +82,7 @@
       });
     },
     draw: function() {
-      this.pieCanvas.setBox(this.element.getBox());
+      this.pieCanvas.setSize(this.element.getSize());
       return this.pieSlicer.drawOn(this.pieCanvas);
     },
     setSummary: function(summary) {

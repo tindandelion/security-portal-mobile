@@ -6,11 +6,11 @@ Ext.define 'Portal.ui.PieCanvas',
     @canvas = @element.dom
     this
     
-  setBox: (box) -> 
-    @element.setBox(box)
+  setSize: (size) -> 
+    @element.setSize(size)
     pixelRatio = window.devicePixelRatio
-    @canvas.width = box.width * pixelRatio
-    @canvas.height = box.height * pixelRatio
+    @canvas.width = size.width * pixelRatio
+    @canvas.height = size.height * pixelRatio
     
   sector: (start, end, type) -> 
     cx = @canvas.width / 2
@@ -73,7 +73,7 @@ Ext.define 'Portal.ui.SummaryPie',
       'resize': @draw
       
   draw: -> 
-    @pieCanvas.setBox @element.getBox()
+    @pieCanvas.setSize @element.getSize()
     @pieSlicer.drawOn @pieCanvas
   
   setSummary: (summary) ->
