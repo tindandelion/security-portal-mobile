@@ -1,6 +1,8 @@
 Ext.define 'Portal.ui.HomeScreen',
   extend: 'Ext.Container'
-  requires: ['Portal.ui.SummaryPie', 'Portal.ui.SummaryNumbers']
+  requires: [
+    'Portal.ui.SummaryPie', 
+    'Portal.ui.SummaryNumbers']
   config:
     fullscreen: true
     layout: 'vbox'
@@ -27,16 +29,7 @@ Ext.define 'Portal.ui.HomeScreen',
         dock: 'bottom'
       }]
       
-  initialize: -> 
-    @callParent(arguments)
-    Ext.Viewport.on 'orientationchange', (viewport, orientation) =>
-      @changeOrientation(orientation)
-      
   setSummary: (context) ->
     @child('#company-name').setHtml(context.company_name)
     @child('#summary-panel').setSummary(context.summary)
     @child('#summary-pie').setSummary(context.summary)
-    
-  changeOrientation: (orientation) ->
-    console.log "Changed orientation to: " + orientation 
-    
