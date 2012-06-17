@@ -6,7 +6,7 @@
     config: {
       label: '',
       count: 0,
-      baseCls: 'summary-panel-item',
+      baseCls: 'summary-entry',
       items: [
         {
           xtype: 'label',

@@ -49,21 +49,12 @@ $default-padding: 13px;
 
 .summary-panel {
   margin: $default-padding;
-  
-  .critical {
-    color: $solarized-red;
-  }
-  
-  .warning {
-    color: $solarized-yellow;
-  }
-  
-  .protected {
-    color: $solarized-cyan;
-  }
+  .critical { color: $solarized-red; }
+  .warning { color: $solarized-yellow; }
+  .protected { color: $solarized-cyan; }
 }
 
-.summary-panel-item {
+.summary-entry {
   text-align: center;
   background-color: $solarized-base-2;
   padding: $default-padding;

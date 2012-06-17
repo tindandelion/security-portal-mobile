@@ -5,7 +5,7 @@ Ext.define 'Portal.ui.SummaryEntry',
     label: '' 
     count: 0
     
-    baseCls: 'summary-panel-item'
+    baseCls: 'summary-entry'
     items: [
       { xtype: 'label', cls: 'label', itemId: 'label' }, 
       { xtype: 'label', cls: 'count', itemId: 'count' }]
