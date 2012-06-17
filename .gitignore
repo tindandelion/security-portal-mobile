@@ -3,3 +3,4 @@ spec/javascripts/*.js
 spec/javascripts/helpers/*.js
 chromedriver.log
 client/styles/.sass-cache/
+*.tmproj
