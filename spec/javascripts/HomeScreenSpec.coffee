@@ -23,8 +23,9 @@ describe 'Home screen rotation', ->
       layout: 'fit'
     @viewport.element.setSize(width: 300, height: 400)
     
-  it 'gets created', ->
-    screen = Ext.create 'Portal.ui.HomeScreen'
+  it 'gets created in portrait orientation', ->
+    screen = Ext.create 'Portal.ui.HomeScreen',
+      orientation: 'portrait'
     @viewport.add(screen)
     
     structure = new HomeScreenStructure(screen.element)
