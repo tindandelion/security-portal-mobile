@@ -1,25 +1,33 @@
 Ext.require ['Portal.ui.HomeScreen']
 
+layoutMatchers = 
+  toBeBelow: (element) -> 
+    actual = @actual
+    @message = ->
+      "Expected #{actual.getId()} to be below #{element.getId()}"
+    actual.getBox().top >= element.getBox().bottom
+    
+class HomeScreenStructure
+  constructor: (element) -> 
+    @element = element
+    
+  companyName: -> @element.down('#company-name')
+  pie: -> @element.down('#summary-pie')
+  numbers: -> @element.down('#summary-panel')
+
 describe 'Home screen rotation', -> 
-  it 'gets created', ->
-    body = Ext.getBody()
-    viewport = Ext.create 'Ext.Container',
-      renderTo: body
+  beforeEach ->
+    @addMatchers(layoutMatchers)
+    @viewport = Ext.create 'Ext.Container',
+      renderTo: Ext.getBody()
       layout: 'fit'
-      
-    viewport.element.setSize(width: 300, height: 400)
+    @viewport.element.setSize(width: 300, height: 400)
     
+  it 'gets created', ->
     screen = Ext.create 'Portal.ui.HomeScreen'
-    viewport.add(screen)
+    @viewport.add(screen)
     
-    element = screen.element
-    title = element.down('#company-name')
-    pie = element.down("#summary-pie")
-    numbers = element.down('#summary-panel')
-    
-    console.log pie.getBox()
-    console.log numbers.getBox()
-    
-    expect(pie.getBox().top).not.toBeLessThan(title.getBox().bottom)
-    expect(numbers.getBox().top).not.toBeLessThan(pie.getBox().bottom)
+    structure = new HomeScreenStructure(screen.element)
+    expect(structure.pie()).toBeBelow(structure.companyName())
+    expect(structure.numbers()).toBeBelow(structure.pie())
   
