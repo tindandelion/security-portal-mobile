@@ -25,6 +25,7 @@ src_files:
 #   - stylesheets/*.css
 #
 stylesheets:
+    - client/portal.css
 
 # helpers
 #
