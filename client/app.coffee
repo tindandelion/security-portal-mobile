@@ -21,7 +21,10 @@ Ext.application
           params.success(context)
         failure: params.failure
 
-    home_screen = Ext.create 'Portal.ui.HomeScreen', id: 'home-screen'
+    home_screen = Ext.create 'Portal.ui.HomeScreen', 
+      id: 'home-screen'
+      orientation: Ext.Viewport.getOrientation()
+      
     login_screen = Ext.create 'Portal.ui.LoginScreen', 
       id: 'login-screen'
       listeners: 
