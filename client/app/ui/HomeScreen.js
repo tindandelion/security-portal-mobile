@@ -19,6 +19,7 @@
       }, {
         xtype: 'summarynumbers',
         id: 'summary-panel',
+        layout: 'hbox',
         dock: 'bottom'
       }
     ]
@@ -26,23 +27,31 @@
 
   contentPanelHorz = {
     xtype: 'panel',
-    layout: 'vbox',
+    layout: 'hbox',
     flex: 1,
     items: [
       {
-        xtype: 'label',
-        cls: 'company-name-label',
-        id: 'company-name',
-        dock: 'top',
-        html: 'Company Name'
-      }, {
-        xtype: 'summarypie',
-        id: 'summary-pie',
-        flex: 1
+        xtype: 'panel',
+        layout: 'vbox',
+        flex: 1,
+        items: [
+          {
+            xtype: 'label',
+            cls: 'company-name-label',
+            id: 'company-name',
+            dock: 'top',
+            html: 'Company Name'
+          }, {
+            xtype: 'summarypie',
+            id: 'summary-pie',
+            flex: 1
+          }
+        ]
       }, {
         xtype: 'summarynumbers',
         id: 'summary-panel',
-        dock: 'bottom'
+        layout: 'vbox',
+        dock: 'right'
       }
     ]
   };
@@ -68,6 +77,7 @@
     },
     initialize: function() {
       this.callParent();
+      console.log("Orientation: " + this.getOrientation());
       return this.add(panels[this.getOrientation()]);
     },
     setSummary: function(context) {

@@ -3,7 +3,6 @@ Ext.define 'Portal.ui.SummaryNumbers',
   requires: ['Portal.ui.SummaryEntry']
   xtype: 'summarynumbers'
   config: 
-    layout: 'hbox'
     cls: 'summary-panel'
     items: [
       {

@@ -18,31 +18,39 @@ contentPanelVert = {
     {
       xtype: 'summarynumbers'
       id: 'summary-panel'
+      layout: 'hbox'
       dock: 'bottom'
     }]
 }
 
 contentPanelHorz = {
   xtype: 'panel'
-  layout: 'vbox'
+  layout: 'hbox'
   flex: 1
   items: [
     {
-      xtype: 'label'
-      cls: 'company-name-label'
-      id: 'company-name'
-      dock: 'top'
-      html: 'Company Name'
-    },
-    {
-      xtype: 'summarypie'
-      id: 'summary-pie'
+      xtype: 'panel'
+      layout: 'vbox'
       flex: 1
+      items: [
+        {
+          xtype: 'label'
+          cls: 'company-name-label'
+          id: 'company-name'
+          dock: 'top'
+          html: 'Company Name'
+        },
+        {
+          xtype: 'summarypie'
+          id: 'summary-pie'
+          flex: 1
+        }]
     },
     {
       xtype: 'summarynumbers'
       id: 'summary-panel'
-      dock: 'bottom'
+      layout: 'vbox'
+      dock: 'right'
     }]
 }
 
@@ -68,6 +76,7 @@ Ext.define 'Portal.ui.HomeScreen',
       
   initialize: -> 
     @callParent()
+    console.log "Orientation: " + @getOrientation()
     @add(panels[@getOrientation()])
       
   setSummary: (context) ->
