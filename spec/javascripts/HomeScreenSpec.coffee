@@ -30,7 +30,7 @@ describe 'Home screen rotation', ->
     expect(structure.pie()).toBeBelow(structure.companyName())
     expect(structure.numbers()).toBeBelow(structure.pie())
     
-  it 'gets created in landscape orientation', ->
+  xit 'gets created in landscape orientation', ->
     screen = createScreen('landscape')
     structure = new HomeScreenStructure(screen.element)
     
