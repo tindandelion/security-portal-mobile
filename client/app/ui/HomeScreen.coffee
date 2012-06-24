@@ -1,7 +1,5 @@
 contentPanelVert = {
-  xtype: 'panel'
-  layout: 'vbox'
-  flex: 1
+  xtype: 'panel', layout: 'vbox', flex: 1
   items: [
     {
       xtype: 'label'
@@ -24,14 +22,10 @@ contentPanelVert = {
 }
 
 contentPanelHorz = {
-  xtype: 'panel'
-  layout: 'hbox'
-  flex: 1
+  xtype: 'panel', layout: 'hbox', flex: 1
   items: [
     {
-      xtype: 'panel'
-      layout: 'vbox'
-      flex: 1
+      xtype: 'panel', layout: 'vbox', flex: 1
       items: [
         {
           xtype: 'label'
@@ -54,7 +48,6 @@ contentPanelHorz = {
     }]
 }
 
-
 panels = 
   portrait: contentPanelVert
   landscape: contentPanelHorz
@@ -76,7 +69,6 @@ Ext.define 'Portal.ui.HomeScreen',
       
   initialize: -> 
     @callParent()
-    console.log "Orientation: " + @getOrientation()
     @add(panels[@getOrientation()])
       
   setSummary: (context) ->

@@ -77,7 +77,6 @@
     },
     initialize: function() {
       this.callParent();
-      console.log("Orientation: " + this.getOrientation());
       return this.add(panels[this.getOrientation()]);
     },
     setSummary: function(context) {
