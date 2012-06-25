@@ -2,7 +2,7 @@ Ext.require ['Portal.ui.SummaryNumbers']
 
 describe 'SummaryNumbers', ->
   beforeEach ->
-    @panel = Ext.create('Portal.ui.SummaryNumbers')
+    @panel = Ext.create 'Portal.ui.SummaryNumbers', {}
     
   afterEach ->
     @panel.destroy()

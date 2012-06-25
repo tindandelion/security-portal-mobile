@@ -16,7 +16,7 @@ contentPanelVert = {
     {
       xtype: 'summarynumbers'
       id: 'summary-panel'
-      layout: 'hbox'
+      orientation: 'portrait'
       dock: 'bottom'
     }]
 }
@@ -43,7 +43,7 @@ contentPanelHorz = {
     {
       xtype: 'summarynumbers'
       id: 'summary-panel'
-      layout: 'vbox'
+      orientation: 'landscape'
       dock: 'right'
     }]
 }

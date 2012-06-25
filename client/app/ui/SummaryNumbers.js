@@ -6,6 +6,7 @@
     xtype: 'summarynumbers',
     config: {
       cls: 'summary-panel',
+      orientation: 'portrait',
       items: [
         {
           xtype: 'summaryentry',
@@ -27,6 +28,27 @@
           flex: 1
         }
       ]
+    },
+    initConfig: function(config) {
+      if (config.orientation === 'landscape') {
+        config.layout = 'vbox';
+      }
+      if (config.orientation === 'portrait') {
+        config.layout = 'hbox';
+      }
+      return this.callParent(arguments);
+    },
+    initialize: function() {
+      this.callParent();
+      return this.styleFirstAndLastItems(this.getOrientation());
+    },
+    styleFirstAndLastItems: function(orientation) {
+      var firstItem, items, lastItem;
+      items = this.getItems().items;
+      firstItem = items[0];
+      lastItem = items[items.length - 1];
+      firstItem.addCls('first-entry-' + orientation);
+      return lastItem.addCls('last-entry-' + orientation);
     },
     setSummary: function(summary) {
       var item, _i, _len, _ref, _results;

@@ -19,7 +19,7 @@
       }, {
         xtype: 'summarynumbers',
         id: 'summary-panel',
-        layout: 'hbox',
+        orientation: 'portrait',
         dock: 'bottom'
       }
     ]
@@ -50,7 +50,7 @@
       }, {
         xtype: 'summarynumbers',
         id: 'summary-panel',
-        layout: 'vbox',
+        orientation: 'landscape',
         dock: 'right'
       }
     ]

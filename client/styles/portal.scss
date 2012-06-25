@@ -59,13 +59,22 @@ $default-padding: 13px;
   background-color: $solarized-base-2;
   padding: $default-padding;
   
-  &:first-child {
+  &.first-entry-portrait {
     @include border-left-radius($form-fieldset-radius);
   };
   
-  &:last-child {
+  &.last-entry-portrait {
     @include border-right-radius($form-fieldset-radius);
   };
+  
+  &.first-entry-landscape {
+    @include border-top-radius($form-fieldset-radius);
+  };
+  
+  &.last-entry-landscape {
+    @include border-bottom-radius($form-fieldset-radius);
+  };
+  
   
   .label {
     font-size: .6em;
