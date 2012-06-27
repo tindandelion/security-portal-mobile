@@ -19,6 +19,7 @@ class HomeScreenStructure
   companyName: -> @element.down('#company-name')
   pie: -> @element.down('#summary-pie')
   numbers: -> @element.down('#summary-panel')
+  
 
 describe 'Home screen rotation', -> 
   viewport = null
@@ -36,7 +37,22 @@ describe 'Home screen rotation', ->
     
     expect(structure.pie()).toBeBelow(structure.companyName())
     expect(structure.numbers()).toBeRightOf(structure.pie())
+  
+  it 'adjust the layout when orientation changes', -> 
+    screen = createScreen('portrait')
+    structure = new HomeScreenStructure(screen.element)
     
+    screen.setOrientation('landscape')
+
+    expect(structure.pie()).toBeBelow(structure.companyName())
+    expect(structure.numbers()).toBeRightOf(structure.pie())
+    
+  it 'removes the previous layout if orientation changes', -> 
+    screen = createScreen('portrait')
+    expect(screen.items.length).toEqual(2)
+    
+    screen.setOrientation('landscape')
+    expect(screen.items.length).toEqual(2)
     
   createScreen = (orientation) ->
     screen = Ext.create 'Portal.ui.HomeScreen',

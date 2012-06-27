@@ -75,9 +75,11 @@
         }
       ]
     },
-    initialize: function() {
-      this.callParent();
-      return this.add(panels[this.getOrientation()]);
+    applyOrientation: function(newOrientation) {
+      if (this.currentPanel) {
+        this.currentPanel.destroy();
+      }
+      return this.currentPanel = this.add(panels[newOrientation]);
     },
     setSummary: function(context) {
       this.down('#company-name').setHtml(context.company_name);

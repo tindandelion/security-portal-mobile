@@ -66,10 +66,10 @@ Ext.define 'Portal.ui.HomeScreen',
         xtype: 'titlebar'
         title: 'Summary'
       }]
-      
-  initialize: -> 
-    @callParent()
-    @add(panels[@getOrientation()])
+    
+  applyOrientation: (newOrientation) -> 
+    @currentPanel.destroy() if @currentPanel
+    @currentPanel = @add(panels[newOrientation])
       
   setSummary: (context) ->
     @down('#company-name').setHtml(context.company_name)

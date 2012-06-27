@@ -12,7 +12,8 @@
     },
     requires: ['Portal.ui.HomeScreen', 'Portal.ui.LoginScreen'],
     launch: function() {
-      var home_screen, login_screen, validateUser;
+      var home_screen, login_screen, validateUser, viewport;
+      viewport = Ext.Viewport;
       validateUser = function(params) {
         return Ext.Ajax.request({
           url: "/validate",
@@ -28,7 +29,7 @@
       };
       home_screen = Ext.create('Portal.ui.HomeScreen', {
         id: 'home-screen',
-        orientation: Ext.Viewport.getOrientation()
+        orientation: viewport.getOrientation()
       });
       login_screen = Ext.create('Portal.ui.LoginScreen', {
         id: 'login-screen',
@@ -41,7 +42,7 @@
               },
               success: function(summary) {
                 home_screen.setSummary(summary);
-                return Ext.Viewport.setActiveItem(home_screen);
+                return viewport.setActiveItem(home_screen);
               },
               failure: function(response) {
                 return Ext.Msg.alert('Login error', 'Invalid user name or password');
@@ -50,7 +51,10 @@
           }
         }
       });
-      return Ext.Viewport.setActiveItem(login_screen);
+      viewport.setActiveItem(login_screen);
+      return viewport.on('orientationchange', function(viewport, orientation) {
+        return home_screen.setOrientation(orientation);
+      });
     }
   });
 
