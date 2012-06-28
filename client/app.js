@@ -40,8 +40,8 @@
                 login: login,
                 password: password
               },
-              success: function(summary) {
-                home_screen.setSummary(summary);
+              success: function(context) {
+                home_screen.setContext(context);
                 return viewport.setActiveItem(home_screen);
               },
               failure: function(response) {
