@@ -9428,7 +9428,7 @@ input[type="search"]::-webkit-search-cancel-button {
 
 /* line 50, styles/portal.scss */
 .summary-pie {
-  margin: 13px;
+  margin-bottom: 13px;
 }
 
 /* line 54, styles/portal.scss */
