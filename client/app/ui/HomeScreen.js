@@ -18,10 +18,15 @@
       if (this.currentPanel) {
         this.currentPanel.destroy();
       }
-      return this.currentPanel = this.add(Portal.ui.SummaryView.forOrientation(newOrientation));
+      this.currentPanel = Portal.ui.SummaryView.forOrientation(newOrientation);
+      if (this.context) {
+        this.currentPanel.setContext(this.context);
+      }
+      return this.add(this.currentPanel);
     },
     setContext: function(context) {
-      return this.currentPanel.setContext(context);
+      this.context = context;
+      return this.currentPanel.setContext(this.context);
     }
   });
 

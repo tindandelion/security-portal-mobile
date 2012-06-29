@@ -47,6 +47,10 @@ $default-padding: 13px;
   color: $text-color;
 }
 
+.summary-pie {
+  margin: $default-padding;
+}
+
 .summary-panel {
   margin: $default-padding;
   .critical { color: $solarized-red; }

@@ -13,7 +13,10 @@ Ext.define 'Portal.ui.HomeScreen',
     
   applyOrientation: (newOrientation) -> 
     @currentPanel.destroy() if @currentPanel
-    @currentPanel = @add(Portal.ui.SummaryView.forOrientation(newOrientation))
+    @currentPanel = Portal.ui.SummaryView.forOrientation(newOrientation)
+    @currentPanel.setContext(@context) if @context
+    @add(@currentPanel)
       
   setContext: (context) ->
-    @currentPanel.setContext(context)
+    @context = context
+    @currentPanel.setContext(@context)
