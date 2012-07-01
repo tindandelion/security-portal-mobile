@@ -18,7 +18,7 @@ Ext.application
 
     Ext.create 'Portal.ui.HomeScreen', 
       id: 'home-screen'
-      orientation: controller.getOrientation()
+      orientation: Ext.Viewport.getOrientation()
       
     Ext.create 'Portal.ui.LoginScreen', 
       id: 'login-screen'
@@ -28,6 +28,3 @@ Ext.application
             credentials: {login, password}
             success: (context) -> controller.showHomeScreen(context)
             failure: (response) -> controller.showLoginError()
-              
-    controller.showLoginScreen()
-      

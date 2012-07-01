@@ -17,9 +17,9 @@
       controller = this.getController('Main');
       Ext.create('Portal.ui.HomeScreen', {
         id: 'home-screen',
-        orientation: controller.getOrientation()
+        orientation: Ext.Viewport.getOrientation()
       });
-      Ext.create('Portal.ui.LoginScreen', {
+      return Ext.create('Portal.ui.LoginScreen', {
         id: 'login-screen',
         listeners: {
           loginRequest: function(login, password) {
@@ -38,7 +38,6 @@
           }
         }
       });
-      return controller.showLoginScreen();
     }
   });
 

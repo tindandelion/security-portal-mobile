@@ -16,6 +16,9 @@
         }
       }
     },
+    launch: function() {
+      return this.showLoginScreen();
+    },
     validateUser: function(params) {
       return Ext.Ajax.request({
         url: "/validate",

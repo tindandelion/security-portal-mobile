@@ -9,6 +9,9 @@ Ext.define 'Portal.controller.Main',
       viewport: 
         orientationchange: (viewport, orientation)-> 
           @getHomeScreen().setOrientation(orientation)
+          
+  launch: -> 
+    @showLoginScreen()
     
   validateUser: (params) -> 
     Ext.Ajax.request
