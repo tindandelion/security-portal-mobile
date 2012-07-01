@@ -10,35 +10,24 @@ Ext.application
   requires: [
     'Portal.ui.HomeScreen',
     'Portal.ui.LoginScreen']
-  launch: -> 
-    viewport = Ext.Viewport 
     
-    validateUser = (params) ->
-      Ext.Ajax.request
-        url: "/validate"
-        method: 'POST'
-        jsonData: params.credentials
-        success: (response) ->
-          context = Ext.decode(response.responseText) 
-          params.success(context)
-        failure: params.failure
+  controllers: ['Main']
+  
+  launch: -> 
+    controller = @getController('Main')
 
-    home_screen = Ext.create 'Portal.ui.HomeScreen', 
+    Ext.create 'Portal.ui.HomeScreen', 
       id: 'home-screen'
-      orientation: viewport.getOrientation()
+      orientation: controller.getOrientation()
       
-    login_screen = Ext.create 'Portal.ui.LoginScreen', 
+    Ext.create 'Portal.ui.LoginScreen', 
       id: 'login-screen'
       listeners: 
         loginRequest: (login, password) -> 
-          validateUser
+          controller.validateUser
             credentials: {login, password}
-            success: (context) -> 
-              home_screen.setContext(context)
-              viewport.setActiveItem(home_screen)
-            failure: (response) -> 
-              Ext.Msg.alert('Login error', 'Invalid user name or password')
+            success: (context) -> controller.showHomeScreen(context)
+            failure: (response) -> controller.showLoginError()
+              
+    controller.showLoginScreen()
       
-    viewport.setActiveItem(login_screen)
-    viewport.on 'orientationchange', (viewport, orientation)-> 
-      home_screen.setOrientation(orientation)

@@ -11,50 +11,34 @@
       '640x920': 'images/startup-screen-640-920.png'
     },
     requires: ['Portal.ui.HomeScreen', 'Portal.ui.LoginScreen'],
+    controllers: ['Main'],
     launch: function() {
-      var home_screen, login_screen, validateUser, viewport;
-      viewport = Ext.Viewport;
-      validateUser = function(params) {
-        return Ext.Ajax.request({
-          url: "/validate",
-          method: 'POST',
-          jsonData: params.credentials,
-          success: function(response) {
-            var context;
-            context = Ext.decode(response.responseText);
-            return params.success(context);
-          },
-          failure: params.failure
-        });
-      };
-      home_screen = Ext.create('Portal.ui.HomeScreen', {
+      var controller;
+      controller = this.getController('Main');
+      Ext.create('Portal.ui.HomeScreen', {
         id: 'home-screen',
-        orientation: viewport.getOrientation()
+        orientation: controller.getOrientation()
       });
-      login_screen = Ext.create('Portal.ui.LoginScreen', {
+      Ext.create('Portal.ui.LoginScreen', {
         id: 'login-screen',
         listeners: {
           loginRequest: function(login, password) {
-            return validateUser({
+            return controller.validateUser({
               credentials: {
                 login: login,
                 password: password
               },
               success: function(context) {
-                home_screen.setContext(context);
-                return viewport.setActiveItem(home_screen);
+                return controller.showHomeScreen(context);
               },
               failure: function(response) {
-                return Ext.Msg.alert('Login error', 'Invalid user name or password');
+                return controller.showLoginError();
               }
             });
           }
         }
       });
-      viewport.setActiveItem(login_screen);
-      return viewport.on('orientationchange', function(viewport, orientation) {
-        return home_screen.setOrientation(orientation);
-      });
+      return controller.showLoginScreen();
     }
   });
 
