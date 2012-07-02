@@ -10,7 +10,8 @@ Ext.define 'Portal.controller.Main',
         orientationchange: (viewport, orientation) -> 
           @getHomeScreen().setOrientation(orientation)
       loginScreen: 
-        loginrequest: 'onLoginRequest'
+        loginrequest: (login, password) -> 
+          @onLoginRequest(login, password)
           
   launch: -> 
     @showLoginScreen()

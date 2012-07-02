@@ -15,7 +15,9 @@
           }
         },
         loginScreen: {
-          loginrequest: 'onLoginRequest'
+          loginrequest: function(login, password) {
+            return this.onLoginRequest(login, password);
+          }
         }
       }
     },
