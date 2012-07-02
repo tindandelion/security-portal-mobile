@@ -12,7 +12,7 @@ describe 'LoginScreen', ->
   
   it 'fires the login request event when clicking on login button', -> 
     loginHandler = jasmine.createSpy('login-handler')
-    @loginScreen.on 'loginRequest', loginHandler
+    @loginScreen.on 'loginrequest', loginHandler
     
     @driver.setCredentials('user-login', 'user-password')
     @driver.clickLogin()

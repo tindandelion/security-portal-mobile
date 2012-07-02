@@ -13,23 +13,34 @@
           orientationchange: function(viewport, orientation) {
             return this.getHomeScreen().setOrientation(orientation);
           }
+        },
+        loginScreen: {
+          loginrequest: function(login, password) {
+            return this.onLoginRequest(login, password);
+          }
         }
       }
     },
     launch: function() {
       return this.showLoginScreen();
     },
-    validateUser: function(params) {
+    onLoginRequest: function(login, password) {
+      var _this = this;
       return Ext.Ajax.request({
         url: "/validate",
         method: 'POST',
-        jsonData: params.credentials,
+        jsonData: {
+          login: login,
+          password: password
+        },
         success: function(response) {
           var context;
           context = Ext.decode(response.responseText);
-          return params.success(context);
+          return _this.showHomeScreen(context);
         },
-        failure: params.failure
+        failure: function() {
+          return _this.showLoginError();
+        }
       });
     },
     showHomeScreen: function(context) {
@@ -40,9 +51,6 @@
     },
     showLoginScreen: function() {
       return this.getViewport().setActiveItem(this.getLoginScreen());
-    },
-    getOrientation: function() {
-      return this.getViewport().getOrientation();
     },
     showLoginError: function() {
       return Ext.Msg.alert('Login error', 'Invalid user name or password');

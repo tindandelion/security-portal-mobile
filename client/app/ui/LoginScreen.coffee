@@ -37,5 +37,5 @@ Ext.define 'Portal.ui.LoginScreen',
   
   fireLoginRequest: -> 
     credentials = @getValues()
-    @fireEvent('loginRequest', credentials.username, credentials.password)    
+    @fireEvent('loginrequest', credentials.username, credentials.password)    
     

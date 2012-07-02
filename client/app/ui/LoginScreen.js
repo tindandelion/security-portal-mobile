@@ -45,7 +45,7 @@
     fireLoginRequest: function() {
       var credentials;
       credentials = this.getValues();
-      return this.fireEvent('loginRequest', credentials.username, credentials.password);
+      return this.fireEvent('loginrequest', credentials.username, credentials.password);
     }
   });
 

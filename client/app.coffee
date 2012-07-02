@@ -14,17 +14,9 @@ Ext.application
   controllers: ['Main']
   
   launch: -> 
-    controller = @getController('Main')
-
     Ext.create 'Portal.ui.HomeScreen', 
-      id: 'home-screen'
       orientation: Ext.Viewport.getOrientation()
+      id: 'home-screen'
       
     Ext.create 'Portal.ui.LoginScreen', 
       id: 'login-screen'
-      listeners: 
-        loginRequest: (login, password) -> 
-          controller.validateUser
-            credentials: {login, password}
-            success: (context) -> controller.showHomeScreen(context)
-            failure: (response) -> controller.showLoginError()

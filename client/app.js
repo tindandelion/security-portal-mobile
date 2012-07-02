@@ -13,30 +13,12 @@
     requires: ['Portal.ui.HomeScreen', 'Portal.ui.LoginScreen'],
     controllers: ['Main'],
     launch: function() {
-      var controller;
-      controller = this.getController('Main');
       Ext.create('Portal.ui.HomeScreen', {
-        id: 'home-screen',
-        orientation: Ext.Viewport.getOrientation()
+        orientation: Ext.Viewport.getOrientation(),
+        id: 'home-screen'
       });
       return Ext.create('Portal.ui.LoginScreen', {
-        id: 'login-screen',
-        listeners: {
-          loginRequest: function(login, password) {
-            return controller.validateUser({
-              credentials: {
-                login: login,
-                password: password
-              },
-              success: function(context) {
-                return controller.showHomeScreen(context);
-              },
-              failure: function(response) {
-                return controller.showLoginError();
-              }
-            });
-          }
-        }
+        id: 'login-screen'
       });
     }
   });
