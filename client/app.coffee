@@ -8,15 +8,15 @@ Ext.application
     '640x920': 'images/startup-screen-640-920.png'
   
   requires: [
-    'Portal.ui.HomeScreen',
-    'Portal.ui.LoginScreen']
+    'Portal.ui.HomeScreen']
     
   controllers: ['Login', 'Home']
+  views: ['Login']
   
   launch: -> 
     Ext.create 'Portal.ui.HomeScreen', 
       orientation: Ext.Viewport.getOrientation()
       id: 'home-screen'
       
-    Ext.create 'Portal.ui.LoginScreen', 
+    Ext.create 'Portal.view.Login', 
       id: 'login-screen'

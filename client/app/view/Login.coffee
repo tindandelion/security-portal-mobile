@@ -1,6 +1,6 @@
 FIELD_WIDTH = '15em'
 
-Ext.define 'Portal.ui.LoginScreen', 
+Ext.define 'Portal.view.Login', 
   extend: 'Ext.form.Panel'
   config:
     layout: 
