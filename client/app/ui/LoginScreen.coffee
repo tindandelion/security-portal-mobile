@@ -3,7 +3,6 @@ FIELD_WIDTH = '15em'
 Ext.define 'Portal.ui.LoginScreen', 
   extend: 'Ext.form.Panel'
   config:
-    fullscreen: true
     layout: 
       type: 'vbox'
       pack: 'center'

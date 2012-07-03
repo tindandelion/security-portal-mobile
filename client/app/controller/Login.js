@@ -1,6 +1,6 @@
 (function() {
 
-  Ext.define('Portal.controller.Main', {
+  Ext.define('Portal.controller.Login', {
     extend: 'Ext.app.Controller',
     config: {
       refs: {
@@ -9,15 +9,8 @@
         loginScreen: '#login-screen'
       },
       control: {
-        viewport: {
-          orientationchange: function(viewport, orientation) {
-            return this.getHomeScreen().setOrientation(orientation);
-          }
-        },
         loginScreen: {
-          loginrequest: function(login, password) {
-            return this.onLoginRequest(login, password);
-          }
+          loginrequest: 'onLoginRequest'
         }
       }
     },

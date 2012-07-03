@@ -1,4 +1,4 @@
-Ext.define 'Portal.controller.Main', 
+Ext.define 'Portal.controller.Login', 
   extend: 'Ext.app.Controller'
   config: 
     refs: 
@@ -6,12 +6,8 @@ Ext.define 'Portal.controller.Main',
       homeScreen: '#home-screen'
       loginScreen: '#login-screen'
     control: 
-      viewport: 
-        orientationchange: (viewport, orientation) -> 
-          @getHomeScreen().setOrientation(orientation)
       loginScreen: 
-        loginrequest: (login, password) -> 
-          @onLoginRequest(login, password)
+        loginrequest: 'onLoginRequest'
           
   launch: -> 
     @showLoginScreen()
@@ -36,4 +32,3 @@ Ext.define 'Portal.controller.Main',
   
   showLoginError: -> 
     Ext.Msg.alert('Login error', 'Invalid user name or password')
-    

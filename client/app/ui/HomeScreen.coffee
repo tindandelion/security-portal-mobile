@@ -3,7 +3,6 @@ Ext.define 'Portal.ui.HomeScreen',
   requires: ['Portal.ui.SummaryView']
   config:
     orientation: 'portrait'
-    fullscreen: true
     layout: 'vbox'
     items: [
       {

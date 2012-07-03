@@ -11,7 +11,7 @@ Ext.application
     'Portal.ui.HomeScreen',
     'Portal.ui.LoginScreen']
     
-  controllers: ['Main']
+  controllers: ['Login', 'Home']
   
   launch: -> 
     Ext.create 'Portal.ui.HomeScreen', 
