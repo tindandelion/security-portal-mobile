@@ -10,11 +10,10 @@
       '320x460': 'images/startup-screen-320-460.png',
       '640x920': 'images/startup-screen-640-920.png'
     },
-    requires: ['Portal.ui.HomeScreen'],
     controllers: ['Login', 'Home'],
-    views: ['Login'],
+    views: ['Login', 'Home'],
     launch: function() {
-      Ext.create('Portal.ui.HomeScreen', {
+      Ext.create('Portal.view.Home', {
         orientation: Ext.Viewport.getOrientation(),
         id: 'home-screen'
       });

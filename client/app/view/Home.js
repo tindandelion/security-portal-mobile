@@ -1,6 +1,6 @@
 (function() {
 
-  Ext.define('Portal.ui.HomeScreen', {
+  Ext.define('Portal.view.Home', {
     extend: 'Ext.Container',
     requires: ['Portal.ui.SummaryView'],
     config: {

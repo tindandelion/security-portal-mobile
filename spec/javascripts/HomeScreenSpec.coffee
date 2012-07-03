@@ -1,4 +1,4 @@
-Ext.require ['Portal.ui.HomeScreen']
+Ext.require ['Portal.view.Home']
 
 layoutMatchers = 
   toBeBelow: (element) -> 
@@ -55,7 +55,7 @@ describe 'Home screen rotation', ->
     expect(screen.items.length).toEqual(2)
     
   createScreen = (orientation) ->
-    screen = Ext.create 'Portal.ui.HomeScreen',
+    screen = Ext.create 'Portal.view.Home',
       orientation: orientation
     viewport.add(screen)
     screen

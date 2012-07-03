@@ -38,10 +38,6 @@ $default-padding: 13px;
 @include sencha-form;
 @include sencha-msgbox;
 
-.placeholder {
-  background-color: desaturate($page-bg-color, 60%);
-}
-
 .company-name-label {
   @extend .x-title;
   color: $text-color;
