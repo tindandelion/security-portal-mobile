@@ -11,3 +11,13 @@ Then /^the login error is shown$/ do
   login_screen.should be_visible
   should have_shown_error(:title => 'Login error', :text => 'Invalid user name or password')
 end
+
+Given /^the user "([^"]*)" logged in with password "([^"]*)" before$/ do |login, password|
+  start_application
+  login_as login, password
+  leave_application
+end
+
+When /^the user reopens the application$/ do
+  start_application
+end

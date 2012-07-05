@@ -15,4 +15,4 @@ module PortalApplication
   end
 end
 
-World(PortalApplication)
+# World(PortalApplication)

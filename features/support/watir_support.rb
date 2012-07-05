@@ -4,6 +4,10 @@ module WatirSupport
   def start_application
     browser.goto(app_url)
   end
+  
+  def leave_application
+    browser.goto("about:blank")
+  end
 
   def app_url
     ENV['APP_URL'] or raise "APP_URL is not set"
