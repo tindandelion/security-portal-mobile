@@ -1,3 +1,8 @@
+When /^a user "([^"]*)" logs in$/ do |login|
+  start_application
+  login_as login, password_for_user(login)
+end
+
 When /^a user "([^"]*)" logs in with password "([^"]*)"$/ do |login, password|
   start_application
   login_as login, password
@@ -12,9 +17,9 @@ Then /^the login error is shown$/ do
   should have_shown_error(:title => 'Login error', :text => 'Invalid user name or password')
 end
 
-Given /^the user "([^"]*)" logged in with password "([^"]*)" before$/ do |login, password|
+Given /^the user "([^"]*)" logged in before$/ do |login|
   start_application
-  login_as login, password
+  login_as login, password_for_user(login)
   leave_application
 end
 

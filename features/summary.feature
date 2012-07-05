@@ -14,7 +14,7 @@ Feature: Protection summary
       | critical  | 10 |
       | warning   | 5  |
       | protected | 7  |
-    When a user "portal-user" logs in with password "password"
+    When a user "portal-user" logs in
     Then the summary page should display
       | critical  | 10 |
       | warning   | 5  |

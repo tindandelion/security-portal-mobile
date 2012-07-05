@@ -9,7 +9,7 @@ Feature: Logging into portal
       | company  | Acme, Inc.  |
   
   Scenario: User logs in successfully
-    When a user "portal-user" logs in with password "password"
+    When a user "portal-user" logs in
     Then the user "portal-user" with password "password" is verified on the server
     And a summary page for company "Acme, Inc." is displayed
     
@@ -20,6 +20,6 @@ Feature: Logging into portal
 
   @wip
   Scenario: User comes back to application
-    Given the user "portal-user" logged in with password "password" before
+    Given the user "portal-user" logged in before
     When the user reopens the application
     And a summary page for company "Acme, Inc." is displayed

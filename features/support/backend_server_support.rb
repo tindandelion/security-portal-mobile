@@ -24,8 +24,8 @@ module BackendServerSupport
     creds.should == {"login" => username, "password" => password}
   end
   
-  def add_user(username, password)
-    server.add_user username, password
+  def password_for_user(username)
+    backend.password_for_login(username)
   end
 end
 

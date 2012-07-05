@@ -19,9 +19,17 @@ module AccountManagement
       @users[login] = password
     end
     
+    def has_login?(login)
+      @users.has_key?(login)
+    end
+    
+    def password_for_login(login)
+      @users[login]
+    end
+    
     def valid_user?(login, password)
-      return false unless @users.has_key?(login)
-      @users[login] == password
+      return false unless has_login?(login)
+      password_for_login(login) == password
     end
   end
   
@@ -41,6 +49,12 @@ module AccountManagement
   
   def company_for_login(login, password)
     companies.find {|company| company.valid_user?(login, password)}
+  end
+  
+  def password_for_login(login)
+    companies.each do |c|
+      return c.password_for_login(login) if c.has_login?(login)
+    end
   end
   
   def reset
