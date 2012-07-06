@@ -2,6 +2,7 @@
 
   Ext.define('Portal.controller.Login', {
     extend: 'Ext.app.Controller',
+    requires: ['Ext.MessageBox'],
     config: {
       refs: {
         viewport: 'viewport',

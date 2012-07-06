@@ -1,7 +1,14 @@
-Ext.require ['Portal.controller.Login']
+Ext.require ['Portal.controller.Login', 'Ext.MessageBox']
 
 describe "Login Controller", -> 
-  it 'creates', ->
+  beforeEach ->
     app = jasmine.createSpyObj('application', ['getRouter', 'control', 'getName'])
-    Ext.create 'Portal.controller.Login',
+    @controller = Ext.create 'Portal.controller.Login',
       application: app
+      
+  it 'calls login request handler', ->
+    @controller.showLoginError = jasmine.createSpy()
+    @controller.onLoginRequest('user', 'password')  
+    
+    
+    
